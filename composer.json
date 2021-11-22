@@ -1,6 +1,8 @@
 {
     "name": "libeo/lbo_vibeo",
     "type": "typo3-cms-extension",
+    "description": "Vibeo accessible HTML5 media player - Based on MediaElement.js",
+    "license": "AGPL-3.0",
     "authors": [
         {
             "name": "Thomas Lepage",
@@ -13,6 +15,11 @@
     "autoload": {
         "psr-4": {
             "Libeo\\Vibeo\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "lbo_vibeo"
         }
     }
 }

@@ -1,14 +1,8 @@
-# Deploy key GitLab :
-
-Username : gitlab+deploy-token-90
-
-Password : 8d7_wfs6-yDg3LLWSzz2
-
 # Description
 
-TYPO3 Vibéo intégration pour inclure vidéo accessible dans les pages.
+TYPO3 Vibeo integration to include an accessible video player on page.
 
-![Screenshot](./doc/screenshot.png)
+[Documentation is here](Documentation/Introduction/Index.rst)
 
 # Versions
 
