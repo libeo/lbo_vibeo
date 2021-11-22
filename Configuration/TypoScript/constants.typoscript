@@ -1,11 +1,11 @@
-plugin.tx_vibeo {
+plugin.tx_lbovibeo {
 	view {
 		# cat=plugin.tx_vibeo/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:vibeo/Resources/Private/Templates/
+		templateRootPath = EXT:lbo_vibeo/Resources/Private/Templates/
 		# cat=plugin.tx_vibeo/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:vibeo/Resources/Private/Partials/
+		partialRootPath = EXT:lbo_vibeo/Resources/Private/Partials/
 		# cat=plugin.tx_vibeo/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:vibeo/Resources/Private/Layouts/
+		layoutRootPath = EXT:lbo_vibeo/Resources/Private/Layouts/
 	}
 	persistence {
 		# cat=plugin.tx_vibeo//a; type=string; label=Default storage PID
@@ -119,22 +119,22 @@ plugin.tx_vibeo {
 
 			# Everything below is for translation of texts inside the player.
 			# You can use LLL references or direct strings.
-			tooltip = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.tooltip
-			playText = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.playText
-			pauseText = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.pauseText
-			fullscreenText = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.fullscreenText
-			unFullscreenText = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.unFullscreenText
-			muteTextMute = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.muteTextMute
-			muteTextUnmute = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.muteTextUnmute
-			volumeUpText = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.volumeUpText
-			volumeDownText = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.volumeDownText
-			tracksTextTurnOn = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.tracksTextTurnOn
-			tracksTextTurnOff = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.tracksTextTurnOff
-			rewindText = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.rewindText
-			forwardText = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.forwardText
-			hour = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.hour
-			minutes = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.minutes
-			seconds = LLL:EXT:vibeo/Resources/Private/Language/locallang.xml:player.seconds
+			tooltip = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.tooltip
+			playText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.playText
+			pauseText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.pauseText
+			fullscreenText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.fullscreenText
+			unFullscreenText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.unFullscreenText
+			muteTextMute = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.muteTextMute
+			muteTextUnmute = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.muteTextUnmute
+			volumeUpText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.volumeUpText
+			volumeDownText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.volumeDownText
+			tracksTextTurnOn = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.tracksTextTurnOn
+			tracksTextTurnOff = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.tracksTextTurnOff
+			rewindText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.rewindText
+			forwardText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.forwardText
+			hour = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.hour
+			minutes = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.minutes
+			seconds = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.seconds
 		}
 
 		list {

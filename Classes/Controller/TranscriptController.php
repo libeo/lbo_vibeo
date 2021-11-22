@@ -39,7 +39,7 @@ use Libeo\Vibeo\Domain\Repository\TranscriptionRepository;
 class TranscriptController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
-	protected $extKey = 'vibeo';
+	protected $extKey = 'lbo_vibeo';
 
 	/**
 	 * transcriptionRepository

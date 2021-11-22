@@ -4,7 +4,7 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function () {
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:vibeo/Configuration/TsConfig/ContentElementWizard.tsconfig">');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lbo_vibeo/Configuration/TsConfig/ContentElementWizard.tsconfig">');
 
         if (TYPO3_MODE === 'BE') {
             $icons = [
@@ -16,7 +16,7 @@ call_user_func(
                     $iconRegistry->registerIcon(
                         $identifier,
                         \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                        ['source' => 'EXT:vibeo/Resources/Public/Icons/' . $path]
+                        ['source' => 'EXT:lbo_vibeo/Resources/Public/Icons/' . $path]
                     );
                 }
             }

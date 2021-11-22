@@ -6,7 +6,7 @@ if (!defined('TYPO3_MODE')) {
 // Register the plugins
 
 // List
-$pluginSignature = 'vibeo_vibeomedialist';
+$pluginSignature = 'lbovibeo_vibeomedialist';
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     'LboVibeo',
     'Vibeomedialist',
@@ -17,12 +17,12 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSi
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
-    'FILE:EXT:vibeo/Configuration/FlexForms/flexform_vibeomedialist.xml'
+    'FILE:EXT:lbo_vibeo/Configuration/FlexForms/flexform_vibeomedialist.xml'
 );
 // END - List
 
 // Single
-$pluginSignature = 'vibeo_vibeosinglemedia';
+$pluginSignature = 'lbovibeo_vibeosinglemedia';
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     'LboVibeo',
     'Vibeosinglemedia',
@@ -33,14 +33,14 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSi
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
-    'FILE:EXT:vibeo/Configuration/FlexForms/flexform_vibeosinglemedia.xml'
+    'FILE:EXT:lbo_vibeo/Configuration/FlexForms/flexform_vibeosinglemedia.xml'
 );
 
 // END - Single
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
     'tx_vibeo_domain_model_media',
-    'EXT:vibeo/Resources/Private/Language/locallang_csh_tx_vibeo_domain_model_media.xml'
+    'EXT:lbo_vibeo/Resources/Private/Language/locallang_csh_tx_vibeo_domain_model_media.xml'
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_vibeo_domain_model_media');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_vibeo_domain_model_transcription');

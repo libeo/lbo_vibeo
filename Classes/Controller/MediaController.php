@@ -49,7 +49,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     static $headerIncluded = false;
-    protected $extKey = 'vibeo';
+    protected $extKey = 'lbo_vibeo';
 
     // If those file type exist in the same folder other "source" will be defined
     protected $fallbackExtensionArray = array('mp4', 'ogg', 'webm');

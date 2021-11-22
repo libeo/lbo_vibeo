@@ -17,7 +17,7 @@
 		<sDEF>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.media
+					<sheetTitle>LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.media
 					</sheetTitle>
 				</TCEforms>
 				<type>array</type>
@@ -25,7 +25,7 @@
 					<settings.records.pages>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.records.pages
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.records.pages
 							</label>
 							<config>
 								<type>group</type>
@@ -41,7 +41,7 @@
 					<settings.records.media>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.records.media
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.records.media
 							</label>
 							<config>
 								<type>group</type>
@@ -61,7 +61,7 @@
 			<ROOT>
 				<TCEforms>
 					<sheetTitle>
-						LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.playerappearance
+						LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.playerappearance
 					</sheetTitle>
 				</TCEforms>
 				<type>array</type>
@@ -69,7 +69,7 @@
 					<settings.player.videoWidth>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoWidth
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoWidth
 							</label>
 							<config>
 								<type>input</type>
@@ -84,7 +84,7 @@
 					<settings.player.videoHeight>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoHeight
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoHeight
 							</label>
 							<config>
 								<type>input</type>
@@ -99,7 +99,7 @@
 					<settings.player.audioWidth>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.audioWidth
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.audioWidth
 							</label>
 							<config>
 								<type>input</type>
@@ -114,7 +114,7 @@
 					<settings.player.audioHeight>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.audioHeight
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.audioHeight
 							</label>
 							<config>
 								<type>input</type>
@@ -129,7 +129,7 @@
 					<settings.player.enableAutosize>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.enableAutosize
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.enableAutosize
 							</label>
 							<config>
 								<type>check</type>
@@ -140,7 +140,7 @@
 					<settings.player.alwaysShowControls>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.alwaysShowControls
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.alwaysShowControls
 							</label>
 							<config>
 								<type>check</type>
@@ -151,7 +151,7 @@
 					<settings.player.overlayControls>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.overlayControls
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.overlayControls
 							</label>
 							<config>
 								<type>check</type>
@@ -161,7 +161,7 @@
 					<settings.player.showCaptionPopup>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.showCaptionPopup
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.showCaptionPopup
 							</label>
 							<config>
 								<type>check</type>
@@ -171,7 +171,7 @@
 					<settings.player.videoVolume>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoVolume
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoVolume
 							</label>
 							<config>
 								<type>select</type>
@@ -179,13 +179,13 @@
 								<items type="array">
 									<numIndex index="0" type="array">
 										<numIndex index="0">
-											LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoVolume.horizontal
+											LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoVolume.horizontal
 										</numIndex>
 										<numIndex index="1">horizontal</numIndex>
 									</numIndex>
 									<numIndex index="1" type="array">
 										<numIndex index="0">
-											LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoVolume.vertical
+											LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.videoVolume.vertical
 										</numIndex>
 										<numIndex index="1">vertical</numIndex>
 									</numIndex>
@@ -198,7 +198,7 @@
 					<settings.player.features>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.features
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.features
 							</label>
 							<config>
 								<type>input</type>
@@ -214,7 +214,7 @@
 					<settings.player.alwaysShowHours>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.alwaysShowHours
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.alwaysShowHours
 							</label>
 							<config>
 								<type>check</type>
@@ -224,7 +224,7 @@
 					<settings.player.showTimecodeFrameCount>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.showTimecodeFrameCount
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.showTimecodeFrameCount
 							</label>
 							<config>
 								<type>check</type>
@@ -234,7 +234,7 @@
 					<settings.player.framesPerSecond>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.framesPerSecond
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.framesPerSecond
 							</label>
 							<config>
 								<type>input</type>
@@ -253,7 +253,7 @@
 			<ROOT>
 				<TCEforms>
 					<sheetTitle>
-						LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.playerbehaviour
+						LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.playerbehaviour
 					</sheetTitle>
 				</TCEforms>
 				<type>array</type>
@@ -261,7 +261,7 @@
 					<settings.player.startVolume>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.startVolume
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.startVolume
 							</label>
 							<config>
 								<type>input</type>
@@ -276,7 +276,7 @@
 					<settings.player.loop>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.loop
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.loop
 							</label>
 							<config>
 								<type>check</type>
@@ -286,7 +286,7 @@
 					<settings.player.iPadUseNativeControls>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.iPadUseNativeControls
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.iPadUseNativeControls
 							</label>
 							<config>
 								<type>check</type>
@@ -296,7 +296,7 @@
 					<settings.player.iPhoneUseNativeControls>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.iPhoneUseNativeControls
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.iPhoneUseNativeControls
 							</label>
 							<config>
 								<type>check</type>
@@ -306,7 +306,7 @@
 					<settings.player.AndroidUseNativeControls>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.AndroidUseNativeControls
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.AndroidUseNativeControls
 							</label>
 							<config>
 								<type>check</type>
@@ -316,7 +316,7 @@
 					<settings.player.enableKeyboard>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.enableKeyboard
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.enableKeyboard
 							</label>
 							<config>
 								<type>check</type>
@@ -327,7 +327,7 @@
 					<settings.player.pauseOtherPlayers>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.pauseOtherPlayers
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.pauseOtherPlayers
 							</label>
 							<config>
 								<type>check</type>
@@ -338,7 +338,7 @@
 					<settings.player.keyActions>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.keyActions
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.keyActions
 							</label>
 							<config>
 								<type>input</type>
@@ -353,7 +353,7 @@
 					<settings.player.hideContextualMenu>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.hideContextualMenu
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.player.hideContextualMenu
 							</label>
 							<config>
 								<type>check</type>
@@ -368,7 +368,7 @@
 			<ROOT>
 				<TCEforms>
 					<sheetTitle>
-						LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.listing
+						LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.listing
 					</sheetTitle>
 				</TCEforms>
 				<type>array</type>
@@ -376,7 +376,7 @@
 					<settings.list.startWithThumbnails>
 						<TCEforms>
 							<label>
-								LLL:EXT:vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.list.startWithThumbnails
+								LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_flexforms.xml:vibeomedialist.list.startWithThumbnails
 							</label>
 							<config>
 								<type>check</type>

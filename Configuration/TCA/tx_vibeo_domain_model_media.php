@@ -5,7 +5,7 @@ if (!defined ('TYPO3_MODE')) {
 
 return [
     'ctrl' => [
-        'title'	=> 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media',
+        'title'	=> 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -25,7 +25,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title,subtitle,author,description,path,url,image,track,',
-        'iconfile' => 'EXT:vibeo/Resources/Public/Icons/vibeo.svg'
+        'iconfile' => 'EXT:lbo_vibeo/Resources/Public/Icons/vibeo.svg'
 
     ],
     'types' => [
@@ -110,7 +110,7 @@ return [
         ],
         'title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.title',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -119,7 +119,7 @@ return [
         ],
         'subtitle' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.subtitle',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.subtitle',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -128,7 +128,7 @@ return [
         ],
         'author' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.author',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.author',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -137,7 +137,7 @@ return [
         ],
         'description' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.description',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.description',
             'config' => array(
                 'type' => 'text',
                 'cols' => 40,
@@ -153,7 +153,7 @@ return [
         ],
         'path' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.path',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.path',
             'config' => [
                 'type' => 'input',
                 'size' => '50',
@@ -173,7 +173,7 @@ return [
         ],
         'url' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.url',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.url',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -182,7 +182,7 @@ return [
         ],
         'image' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.image',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.image',
             'config' => [
                 'type' => 'input',
                 'size' => '50',
@@ -202,7 +202,7 @@ return [
         ],
         'track' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.track',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_media.track',
             'config' => [
                 'type' => 'input',
                 'size' => '50',

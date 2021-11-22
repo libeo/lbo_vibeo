@@ -1,12 +1,12 @@
 mod.wizards.newContentElement.wizardItems.plugins {
 	elements {
-		vibeo_vibeosinglemedia {
+		lbovibeo_vibeosinglemedia {
 			iconIdentifier = vibeo-plugin-icon
-			title = LLL:EXT:vibeo/Resources/Private/Language/locallang_be.xml:vibeosinglemedia.title
-			description = LLL:EXT:vibeo/Resources/Private/Language/locallang_be.xlf:vibeosinglemedia.description
+			title = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_be.xml:vibeosinglemedia.title
+			description = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_be.xlf:vibeosinglemedia.description
 			tt_content_defValues {
 				CType = list
-				list_type = vibeo_vibeosinglemedia
+				list_type = lbovibeo_vibeosinglemedia
 			}
 		}
 	}
