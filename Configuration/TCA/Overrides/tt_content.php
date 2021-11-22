@@ -8,7 +8,7 @@ if (!defined('TYPO3_MODE')) {
 // List
 $pluginSignature = 'vibeo_vibeomedialist';
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Vibeo',
+    'LboVibeo',
     'Vibeomedialist',
     'Vibeo media list'
 );
@@ -24,7 +24,7 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 // Single
 $pluginSignature = 'vibeo_vibeosinglemedia';
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Vibeo',
+    'LboVibeo',
     'Vibeosinglemedia',
     'Vibeo single media'
 );

@@ -23,7 +23,7 @@ call_user_func(
         }
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'Libeo.Vibeo',
+            'Libeo.LboVibeo',
             'Vibeomedialist',
             [
                 \Libeo\Vibeo\Controller\MediaController::class => 'list',
@@ -35,7 +35,7 @@ call_user_func(
         );
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'Libeo.Vibeo',
+            'Libeo.LboVibeo',
             'Vibeosinglemedia',
             [
                 \Libeo\Vibeo\Controller\MediaController::class => 'single',
