@@ -15,7 +15,7 @@
 var mejs = mejs || {};
 
 // version number
-mejs.version = '2.13.1'; 
+mejs.version = '2.13.1';
 
 
 // player number (for missing, same id attr)
@@ -62,12 +62,12 @@ mejs.Utility = {
 			slashPos,
 			filenamePos,
 			scriptUrl,
-			scriptPath,			
+			scriptPath,
 			scriptFilename,
 			scripts = document.getElementsByTagName('script'),
 			il = scripts.length,
 			jl = scriptNames.length;
-			
+
 		// go through all <script> tags
 		for (; i < il; i++) {
 			scriptUrl = scripts[i].src;
@@ -77,10 +77,10 @@ mejs.Utility = {
 				scriptPath = scriptUrl.substring(0, slashPos + 1);
 			} else {
 				scriptFilename = scriptUrl;
-				scriptPath = '';			
+				scriptPath = '';
 			}
-			
-			// see if any <script> tags have a file name that matches the 
+
+			// see if any <script> tags have a file name that matches the
 			for (j = 0; j < jl; j++) {
 				testname = scriptNames[j];
 				filenamePos = scriptFilename.indexOf(testname);
@@ -89,13 +89,13 @@ mejs.Utility = {
 					break;
 				}
 			}
-			
+
 			// if we found a path, then break and return it
 			if (codePath !== '') {
 				break;
 			}
 		}
-		
+
 		// send the best path back
 		return codePath;
 	},
@@ -106,40 +106,40 @@ mejs.Utility = {
 		} else if(typeof fps == 'undefined') {
 		    fps = 25;
 		}
-	
+
 		var hours = Math.floor(time / 3600) % 24,
 			minutes = Math.floor(time / 60) % 60,
 			seconds = Math.floor(time % 60),
 			frames = Math.floor(((time % 1)*fps).toFixed(3)),
-			result = 
+			result =
 					( (forceHours || hours > 0) ? (hours < 10 ? '0' + hours : hours) + ':' : '')
 						+ (minutes < 10 ? '0' + minutes : minutes) + ':'
 						+ (seconds < 10 ? '0' + seconds : seconds)
 						+ ((showFrameCount) ? ':' + (frames < 10 ? '0' + frames : frames) : '');
-	
+
 		return result;
 	},
-	
+
 	timeCodeToSeconds: function(hh_mm_ss_ff, forceHours, showFrameCount, fps){
 		if (typeof showFrameCount == 'undefined') {
 		    showFrameCount=false;
 		} else if(typeof fps == 'undefined') {
 		    fps = 25;
 		}
-	
+
 		var tc_array = hh_mm_ss_ff.split(":"),
 			tc_hh = parseInt(tc_array[0], 10),
 			tc_mm = parseInt(tc_array[1], 10),
 			tc_ss = parseInt(tc_array[2], 10),
 			tc_ff = 0,
 			tc_in_seconds = 0;
-		
+
 		if (showFrameCount) {
 		    tc_ff = parseInt(tc_array[3])/fps;
 		}
-		
+
 		tc_in_seconds = ( tc_hh * 3600 ) + ( tc_mm * 60 ) + tc_ss + tc_ff;
-		
+
 		return tc_in_seconds;
 	},
 	formatTimeForScreenReaders: function(time, hours, minutes, seconds){
@@ -162,30 +162,30 @@ mejs.Utility = {
 		}
 		return readerTime;
 	},
-	
+
 
 	convertSMPTEtoSeconds: function (SMPTE) {
-		if (typeof SMPTE != 'string') 
+		if (typeof SMPTE != 'string')
 			return false;
 
 		SMPTE = SMPTE.replace(',', '.');
-		
+
 		var secs = 0,
 			decimalLen = (SMPTE.indexOf('.') != -1) ? SMPTE.split('.')[1].length : 0,
 			multiplier = 1;
-		
+
 		SMPTE = SMPTE.split(':').reverse();
-		
+
 		for (var i = 0; i < SMPTE.length; i++) {
 			multiplier = 1;
 			if (i > 0) {
-				multiplier = Math.pow(60, i); 
+				multiplier = Math.pow(60, i);
 			}
 			secs += Number(SMPTE[i]) * multiplier;
 		}
 		return Number(secs.toFixed(decimalLen));
-	},	
-	
+	},
+
 	/* borrowed from SWFObject: http://code.google.com/p/swfobject/source/browse/trunk/swfobject/src/swfobject.js#474 */
 	removeSwf: function(id) {
 		var obj = document.getElementById(id);
@@ -213,7 +213,7 @@ mejs.Utility = {
 				}
 			}
 			obj.parentNode.removeChild(obj);
-		}		
+		}
 	}
 };
 
@@ -345,7 +345,7 @@ mejs.MediaFeatures = {
 		t.isGecko = (ua.match(/gecko/gi) !== null) && !t.isWebkit && !t.isIE;
 		t.isOpera = (ua.match(/opera/gi) !== null);
 		t.hasTouch = ('ontouchstart' in window && window.ontouchstart != null);
-		
+
 		// borrowed from Modernizr
 		t.svg = !! document.createElementNS &&
 				!! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;
@@ -368,49 +368,49 @@ mejs.MediaFeatures = {
 
 		// iOS
 		t.hasSemiNativeFullScreen = (typeof v.webkitEnterFullscreen !== 'undefined');
-		
+
 		// W3C
 		t.hasNativeFullscreen = (typeof v.requestFullscreen !== 'undefined');
-		
+
 		// webkit/firefox/IE11+
 		t.hasWebkitNativeFullScreen = (typeof v.webkitRequestFullScreen !== 'undefined');
 		t.hasMozNativeFullScreen = (typeof v.mozRequestFullScreen !== 'undefined');
 		t.hasMsNativeFullScreen = (typeof v.msRequestFullscreen !== 'undefined');
-		
+
 		t.hasTrueNativeFullScreen = (t.hasWebkitNativeFullScreen || t.hasMozNativeFullScreen || t.hasMsNativeFullScreen);
 		t.nativeFullScreenEnabled = t.hasTrueNativeFullScreen;
-		
+
 		// Enabled?
 		if (t.hasMozNativeFullScreen) {
 			t.nativeFullScreenEnabled = document.mozFullScreenEnabled;
 		} else if (t.hasMsNativeFullScreen) {
-			t.nativeFullScreenEnabled = document.msFullscreenEnabled;		
+			t.nativeFullScreenEnabled = document.msFullscreenEnabled;
 		}
-		
+
 		if (t.isChrome) {
 			t.hasSemiNativeFullScreen = false;
 		}
 
 		if (t.hasTrueNativeFullScreen) {
-			
+
 			t.fullScreenEventName = '';
-			if (t.hasWebkitNativeFullScreen) { 
+			if (t.hasWebkitNativeFullScreen) {
 				t.fullScreenEventName = 'webkitfullscreenchange';
-				
+
 			} else if (t.hasMozNativeFullScreen) {
 				t.fullScreenEventName = 'mozfullscreenchange';
-				
+
 			} else if (t.hasMsNativeFullScreen) {
 				t.fullScreenEventName = 'MSFullscreenChange';
 			}
-			
+
 			t.isFullScreen = function() {
 				if (v.mozRequestFullScreen) {
 					return d.mozFullScreen;
-				
+
 				} else if (v.webkitRequestFullScreen) {
 					return d.webkitIsFullScreen;
-				
+
 				} else if (v.hasMsNativeFullScreen) {
 					return d.msFullscreenElement !== null;
 				}
@@ -420,7 +420,7 @@ mejs.MediaFeatures = {
 
 				if (t.hasWebkitNativeFullScreen) {
 					el.webkitRequestFullScreen();
-					
+
 				} else if (t.hasMozNativeFullScreen) {
 					el.mozRequestFullScreen();
 
@@ -433,13 +433,13 @@ mejs.MediaFeatures = {
 			t.cancelFullScreen = function() {
 				if (t.hasWebkitNativeFullScreen) {
 					document.webkitCancelFullScreen();
-					
+
 				} else if (t.hasMozNativeFullScreen) {
 					document.mozCancelFullScreen();
-					
+
 				} else if (t.hasMsNativeFullScreen) {
 					document.msExitFullscreen();
-					
+
 				}
 			}
 
@@ -699,7 +699,7 @@ mejs.PluginMediaElement.prototype = {
 	// additional non-HTML5 methods
 	setVideoSize: function (width, height) {
 
-		//if (this.pluginType == 'flash' || this.pluginType == 'silverlight') {
+		if (this.pluginType == 'flash' || this.pluginType == 'silverlight') {
 			if ( this.pluginElement.style) {
 				this.pluginElement.style.width = width + 'px';
 				this.pluginElement.style.height = height + 'px';
@@ -707,7 +707,7 @@ mejs.PluginMediaElement.prototype = {
 			if (this.pluginApi != null && this.pluginApi.setVideoSize) {
 				this.pluginApi.setVideoSize(width, height);
 			}
-		//}
+		}
 	},
 
 	setFullscreen: function (fullscreen) {
@@ -837,7 +837,7 @@ mejs.MediaPluginBridge = {
 		if(!pluginMediaElement){
             return;
         }
-        
+
 		// fake event object to mimic real HTML media event.
 		e = {
 			type: eventName,
@@ -1009,7 +1009,7 @@ mejs.HtmlMediaElementShim = {
 			pluginInfo,
 			dummy,
 			media;
-			
+
 		// STEP 1: Get URL and type from <video src> or <source src>
 
 		// supplied type overrides <video type> and <source type>
@@ -1066,7 +1066,7 @@ mejs.HtmlMediaElementShim = {
 
 		// test for native playback first
 		if (supportsMediaTag && (options.mode === 'auto' || options.mode === 'auto_plugin' || options.mode === 'native')  && !(mejs.MediaFeatures.isBustedNativeHTTPS && options.httpsBasicAuthSite === true)) {
-						
+
 			if (!isMediaTag) {
 
 				// create a real HTML5 Media Element
@@ -1093,7 +1093,7 @@ mejs.HtmlMediaElementShim = {
 				if (result.url !== null) {
 					htmlMediaElement.src = result.url;
 				}
-			
+
 				// if `auto_plugin` mode, then cache the native result but try plugins.
 				if (options.mode !== 'auto_plugin') {
 					return result;
@@ -1138,7 +1138,7 @@ mejs.HtmlMediaElementShim = {
 				}
 			}
 		}
-		
+
 		// at this point, being in 'auto_plugin' mode implies that we tried plugins but failed.
 		// if we have native support then return that.
 		if (options.mode === 'auto_plugin' && result.method === 'native') {
@@ -1177,20 +1177,20 @@ mejs.HtmlMediaElementShim = {
 		var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
 		return (/(mp4|m4v|ogg|ogv|webm|webmv|flv|wmv|mpeg|mov)/gi.test(ext) ? 'video' : 'audio') + '/' + this.getTypeFromExtension(ext);
 	},
-	
+
 	getTypeFromExtension: function(ext) {
-		
+
 		switch (ext) {
 			case 'mp4':
 			case 'm4v':
 				return 'mp4';
 			case 'webm':
 			case 'webma':
-			case 'webmv':	
+			case 'webmv':
 				return 'webm';
 			case 'ogg':
 			case 'oga':
-			case 'ogv':	
+			case 'ogv':
 				return 'ogg';
 			default:
 				return ext;
@@ -1259,7 +1259,7 @@ mejs.HtmlMediaElementShim = {
 		if (playback.isVideo) {
 			width = (options.pluginWidth > 0) ? options.pluginWidth : (options.videoWidth > 0) ? options.videoWidth : (htmlMediaElement.getAttribute('width') !== null) ? htmlMediaElement.getAttribute('width') : options.defaultVideoWidth;
 			height = (options.pluginHeight > 0) ? options.pluginHeight : (options.videoHeight > 0) ? options.videoHeight : (htmlMediaElement.getAttribute('height') !== null) ? htmlMediaElement.getAttribute('height') : options.defaultVideoHeight;
-		
+
 			// in case of '%' make sure it's encoded
 			width = mejs.Utility.encodeUrl(width);
 			height = mejs.Utility.encodeUrl(height);
@@ -1373,9 +1373,10 @@ mejs.HtmlMediaElementShim = {
 
 			case 'youtube':
 
-
+        const shortUrl = 'youtu.be';
 				var
-					videoId = playback.url.substr(playback.url.lastIndexOf('=')+1);
+          videoId = playback.url.includes(shortUrl) ? playback.url.substr(playback.url.lastIndexOf('/')+1) : playback.url.substr(playback.url.lastIndexOf('=')+1);
+
 					youtubeSettings = {
 						container: container,
 						containerId: container.id,
@@ -1397,11 +1398,11 @@ mejs.HtmlMediaElementShim = {
 			// DEMO Code. Does NOT work.
 			case 'vimeo':
 				//
-				
+
 				pluginMediaElement.vimeoid = playback.url.substr(playback.url.lastIndexOf('/')+1);
-				
+
 				container.innerHTML ='<iframe src="http://player.vimeo.com/video/' + pluginMediaElement.vimeoid + '?portrait=0&byline=0&title=0" width="' + width +'" height="' + height +'" frameborder="0" class="mejs-shim"></iframe>';
-				
+
 				/*
 				container.innerHTML =
 					'<object width="' + width + '" height="' + height + '" class="mejs-shim">' +
@@ -1412,8 +1413,8 @@ mejs.HtmlMediaElementShim = {
 						'<embed src="//vimeo.com/moogaloop.swf?api=1&amp;clip_id=' + pluginMediaElement.vimeoid + '&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="' + width + '" height="' + height + '" class="mejs-shim"></embed>' +
 					'</object>';
 					*/
-									
-				break;			
+
+				break;
 		}
 		// hide original element
 		htmlMediaElement.style.display = 'none';
@@ -1603,7 +1604,7 @@ mejs.YouTubeApi = {
 
 		var specialIEContainer,
 			youtubeUrl = '//www.youtube.com/apiplayer?enablejsapi=1&amp;playerapiid=' + settings.pluginId  + '&amp;version=3&amp;autoplay=0&amp;controls=0&amp;modestbranding=1&loop=0';
-			
+
 		if (mejs.MediaFeatures.isIE) {
 
 			specialIEContainer = document.createElement('div');
@@ -1639,9 +1640,9 @@ mejs.YouTubeApi = {
 
 		// load the youtube video
 		player.cueVideoById(settings.videoId);
-		
+
 		var callbackName = settings.containerId + '_callback';
-		
+
 		window[callbackName] = function(e) {
 			mejs.YouTubeApi.handleStateChange(e, player, pluginMediaElement);
 		}
@@ -2734,9 +2735,9 @@ if (typeof jQuery != 'undefined') {
 				});
 
 				// TEMP: needs to be moved somewhere else
-				if (t.media.pluginType == 'youtube') {
-					t.container.find('.mejs-overlay-play').hide();
-				}
+				// if (t.media.pluginType == 'youtube') {
+				// 	t.container.find('.mejs-overlay-play').hide();
+				// }
 			}
 
 			// force autoplay for HTML5
@@ -2835,7 +2836,7 @@ if (typeof jQuery != 'undefined') {
 				playButton = playLayer.find('.mejs-overlay-button');
 
 			playLayer.height(t.container.height() - t.controls.height());
-			playButton.css('margin-top', '-' + (playButton.height()/2 - t.controls.height()/2).toString() + 'px'  );
+			// playButton.css('margin-top', '-' + (playButton.height()/2 - t.controls.height()/2).toString() + 'px'  );
 			if(t.container.width() < 210){
 				t.container.addClass('vibeo-player-small')
 			}else{
@@ -2953,7 +2954,7 @@ if (typeof jQuery != 'undefined') {
 			// this needs to come last so it's on top
 			bigPlay =
 				$('<div class="mejs-overlay mejs-layer mejs-overlay-play">'+
-					'<div class="mejs-overlay-button"></div>'+
+					'<button class="mejs-overlay-button" type="button"></button>'+
 				'</div>')
 				.appendTo(layers)
 				.click(function() {
@@ -3265,9 +3266,9 @@ if (typeof jQuery != 'undefined') {
 				});
 
 			media.addEventListener('play', function() {
-			
+
 				if ($('#' + btnId + ' span').text() != t.options.pauseText){
-					$('#' + btnId + ' span').text(t.options.pauseText);	
+					$('#' + btnId + ' span').text(t.options.pauseText);
 				}
 				$('#' + btnId).parent('.mejs-playpause-button').removeClass('mejs-play').addClass('mejs-pause');
 
@@ -3276,14 +3277,14 @@ if (typeof jQuery != 'undefined') {
 			}, false);
 
 			media.addEventListener('pause', function() {
-				
+
 				if ($('#' + btnId + ' span').text() != t.options.playText){
 					$('#' + btnId + ' span').text(t.options.playText);
 				}
 				$('#' + btnId).parent('.mejs-playpause-button').removeClass('mejs-pause').addClass('mejs-play');
 
 				if ($('.mejs-playpause-button.mejs-pause').length > 0) {
-					$('.l-region').html(t.options.pauseText);	
+					$('.l-region').html(t.options.pauseText);
 				} else {
 					$('.l-region').html(t.options.playText);
 				}
@@ -3291,7 +3292,7 @@ if (typeof jQuery != 'undefined') {
 
 		}
 	});
-	
+
 })(mejs.$);
 
 (function($) {
@@ -3325,7 +3326,7 @@ if (typeof jQuery != 'undefined') {
 				});
 		}
 	});
-	
+
 })(mejs.$);
 
 (function($) {
@@ -3388,7 +3389,7 @@ if (typeof jQuery != 'undefined') {
 						} else if (x > width + offset.left) {
 							x = width + offset.left;
 						}
-						
+
 						pos = x - offset.left;
 						percentage = (pos / width);
 						newTime = (percentage <= 0.02) ? 0 : percentage * media.duration;
@@ -3553,7 +3554,7 @@ if (typeof jQuery != 'undefined') {
 
 				// update bar and handle
 				if (t.total && t.handle) {
-					var 
+					var
 						newWidth = Math.round((t.total.width() - t.handle.outerWidth(true)) * t.media.currentTime / t.media.duration),
 						handlePos = newWidth;
 
@@ -3567,7 +3568,7 @@ if (typeof jQuery != 'undefined') {
 })(mejs.$);
 
 (function($) {
-	
+
 	// options
 	$.extend(mejs.MepDefaults, {
 		duration: -1,
@@ -3579,13 +3580,13 @@ if (typeof jQuery != 'undefined') {
 	$.extend(MediaElementPlayer.prototype, {
 		buildcurrent: function(player, controls, layers, media) {
 			var t = this;
-			
+
 			$('<div class="mejs-time">'+
 					'<span class="mejs-currenttime">' + (player.options.alwaysShowHours ? '00:' : '')
 					+ (player.options.showTimecodeFrameCount? '00:00:00':'00:00')+ '</span>'+
 					'</div>')
 					.appendTo(controls);
-			
+
 			t.currenttime = t.controls.find('.mejs-currenttime');
 
 			media.addEventListener('timeupdate',function() {
@@ -3596,39 +3597,39 @@ if (typeof jQuery != 'undefined') {
 
 		buildduration: function(player, controls, layers, media) {
 			var t = this;
-			
+
 			if (controls.children().last().find('.mejs-currenttime').length > 0) {
 				$(t.options.timeAndDurationSeparator +
-					'<span class="mejs-duration">' + 
-						(t.options.duration > 0 ? 
+					'<span class="mejs-duration">' +
+						(t.options.duration > 0 ?
 							mejs.Utility.secondsToTimeCode(t.options.duration, t.options.alwaysShowHours || t.media.duration > 3600, t.options.showTimecodeFrameCount,  t.options.framesPerSecond || 25) :
-				   			((player.options.alwaysShowHours ? '00:' : '') + (player.options.showTimecodeFrameCount? '00:00:00':'00:00')) 
-				   		) + 
+				   			((player.options.alwaysShowHours ? '00:' : '') + (player.options.showTimecodeFrameCount? '00:00:00':'00:00'))
+				   		) +
 					'</span>')
 					.appendTo(controls.find('.mejs-time'));
 			} else {
 
 				// add class to current time
 				controls.find('.mejs-currenttime').parent().addClass('mejs-currenttime-container');
-				
+
 				$('<div class="mejs-time mejs-duration-container">'+
-					'<span class="mejs-duration">' + 
-						(t.options.duration > 0 ? 
+					'<span class="mejs-duration">' +
+						(t.options.duration > 0 ?
 							mejs.Utility.secondsToTimeCode(t.options.duration, t.options.alwaysShowHours || t.media.duration > 3600, t.options.showTimecodeFrameCount,  t.options.framesPerSecond || 25) :
-				   			((player.options.alwaysShowHours ? '00:' : '') + (player.options.showTimecodeFrameCount? '00:00:00':'00:00')) 
-				   		) + 
+				   			((player.options.alwaysShowHours ? '00:' : '') + (player.options.showTimecodeFrameCount? '00:00:00':'00:00'))
+				   		) +
 					'</span>' +
 				'</div>')
 				.appendTo(controls);
 			}
-			
+
 			t.durationD = t.controls.find('.mejs-duration');
 
 			media.addEventListener('timeupdate',function() {
 				player.updateDuration();
 			}, false);
 		},
-		
+
 		updateCurrent:  function() {
 			var t = this;
 
@@ -3636,16 +3637,16 @@ if (typeof jQuery != 'undefined') {
 				t.currenttime.html(mejs.Utility.secondsToTimeCode(t.media.currentTime, t.options.alwaysShowHours || t.media.duration > 3600, t.options.showTimecodeFrameCount,  t.options.framesPerSecond || 25));
 			}
 		},
-		
+
 		updateDuration: function() {
 			var t = this;
 
 			//Toggle the long video class if the video is longer than an hour.
 			t.container.toggleClass("mejs-long-video", t.media.duration > 3600);
-			
+
 			if (t.durationD && (t.options.duration > 0 || t.media.duration)) {
 				t.durationD.html(mejs.Utility.secondsToTimeCode(t.options.duration > 0 ? t.options.duration : t.media.duration, t.options.alwaysShowHours, t.options.showTimecodeFrameCount, t.options.framesPerSecond || 25));
-			}		
+			}
 		}
 	});
 
@@ -3667,7 +3668,7 @@ if (typeof jQuery != 'undefined') {
 	$.extend(MediaElementPlayer.prototype, {
 
 		buildvolume: function(player, controls, layers, media) {
-			
+
 			// Android and iOS don't support volume controls
 			if (mejs.MediaFeatures.hasTouch && this.options.hideVolumeOnTouchDevices)
 				return;
@@ -3739,7 +3740,7 @@ if (typeof jQuery != 'undefined') {
 
 					// handle
 					volumeHandle.css('top', Math.round(totalPosition.top + newTop - (volumeHandle.height() / 2)));
-	
+
 					// show the current visibility
 					volumeCurrent.height(totalHeight - newTop );
 					volumeCurrent.css('top', totalPosition.top + newTop);
@@ -3757,7 +3758,7 @@ if (typeof jQuery != 'undefined') {
 
 					// handle
 					volumeHandle.css('left', Math.round(16 + newLeft - (volumeHandle.width() / 2)));
-	
+
 					// rezize the current part of the volume bar
 					volumeCurrent.width( Math.round(newLeft) );
 				}
@@ -3975,17 +3976,17 @@ if (typeof jQuery != 'undefined') {
 						'<button type="button" aria-controls="' + t.id + '" aria-live="polite"><span class="visuallyhidden">'+t.options.fullscreenText+'</span></button>' +
 					'</div>')
 					.appendTo(controls);
-			
+
 			// Check focus on guards button to quit fullscreen mode
 			t.container.parent().on('focus','button.guard',function(){
 				var isFullScreen = (mejs.MediaFeatures.hasTrueNativeFullScreen && mejs.MediaFeatures.isFullScreen()) || player.isFullScreen;
-				
+
 				// Trigger exitfullscreen only if currently fullscreen
 				if(isFullScreen){
 					fullscreenBtn.trigger('click');
 				}
 			});
-			
+
 				if (t.media.pluginType === 'native' || (!t.options.usePluginFullScreen && !mejs.MediaFeatures.isFirefox)) {
 
 					fullscreenBtn.click(function() {
@@ -4422,11 +4423,11 @@ if (typeof jQuery != 'undefined') {
 		tracksTextTurnOff: 'Captions/Subtitles Off',
 		tracksText: 'Captions/Subtitles',
 		tracksText: mejs.i18n.t('Captions/Subtitles'),
-		
+
 		// option to remove the [cc] button when no <track kind="subtitles"> are present
 		hideCaptionsButtonWhenEmpty: true,
 
-		// #id or .class		
+		// #id or .class
 		slidesSelector: ''
 	});
 
@@ -4438,8 +4439,8 @@ if (typeof jQuery != 'undefined') {
 			if (player.tracks.length == 0)
 				return;
 
-			var t = this, 
-				i, 
+			var t = this,
+				i,
 				options = '';
 
 			if (t.domNode.textTracks) { // if browser will do native captions, prefer mejs captions, loop through tracks and hide
@@ -4447,10 +4448,10 @@ if (typeof jQuery != 'undefined') {
 					t.domNode.textTracks[i].mode = "hidden";
 				}
 			}
-			player.chapters = 
+			player.chapters =
 					$('<div class="mejs-chapters mejs-layer"></div>')
 						.prependTo(layers).hide();
-			player.captions = 
+			player.captions =
 					$('<div class="mejs-captions-layer mejs-layer"><div class="mejs-captions-position mejs-captions-position-hover"><span class="mejs-captions-text"></span></div></div>')
 						.prependTo(layers).hide();
 			player.captionsText = player.captions.find('.mejs-captions-text');
@@ -4558,14 +4559,14 @@ if (typeof jQuery != 'undefined') {
 			media.addEventListener('timeupdate',function(e) {
 				player.displayCaptions();
 			}, false);
-			
+
 			if (player.options.slidesSelector != '') {
 				player.slidesContainer = $(player.options.slidesSelector);
 
 				media.addEventListener('timeupdate',function(e) {
-					player.displaySlides();	
+					player.displaySlides();
 				}, false);
-			
+
 			}
 
 			media.addEventListener('loadedmetadata', function(e) {
@@ -4594,12 +4595,12 @@ if (typeof jQuery != 'undefined') {
 				player.chapters.css('visibility','hidden');
 			}
 		},
-		
+
 		setTrack: function(lang){
-		
+
 			var t = this,
 				i;
-		
+
 			if (lang == 'none') {
 				t.selectedTrack = null;
 				t.captionsButton.removeClass('mejs-captions-enabled');
@@ -4627,8 +4628,8 @@ if (typeof jQuery != 'undefined') {
 			} else {
 				// add done?
 				t.isLoadingTrack = false;
-				
-				t.checkForTracks();	
+
+				t.checkForTracks();
 			}
 		},
 
@@ -4656,11 +4657,11 @@ if (typeof jQuery != 'undefined') {
 
 					// parse the loaded file
 					if (typeof d == "string" && (/<tt\s+xml/ig).exec(d)) {
-						track.entries = mejs.TrackFormatParser.dfxp.parse(d);					
-					} else {	
+						track.entries = mejs.TrackFormatParser.dfxp.parse(d);
+					} else {
 						track.entries = mejs.TrackFormatParser.webvvt.parse(d);
 					}
-					
+
 					after();
 
 					if (track.kind == 'chapters') {
@@ -4670,10 +4671,10 @@ if (typeof jQuery != 'undefined') {
 							}
 						}, false);
 					}
-					
+
 					if (track.kind == 'slides') {
 						t.setupSlides(track);
-					}					
+					}
 				},
 				error: function() {
 					t.loadNextTrack();
@@ -4729,12 +4730,12 @@ if (typeof jQuery != 'undefined') {
 				t.captionsButton.find('.mejs-captions-translations').outerHeight(true)
 			);
 		},
-		
+
 		checkForTracks: function() {
 			var
 				t = this,
 				hasSubtitles = false;
-			
+
 			// check if any subtitles
 			if (t.options.hideCaptionsButtonWhenEmpty) {
 				for (i=0; i<t.tracks.length; i++) {
@@ -4742,13 +4743,13 @@ if (typeof jQuery != 'undefined') {
 						hasSubtitles = true;
 						break;
 					}
-				}	
-					
+				}
+
 				if (!hasSubtitles) {
 					t.captionsButton.hide();
 					t.setControlsSize();
-				}													
-			}		
+				}
+			}
 		},
 
 		displayCaptions: function() {
@@ -4774,25 +4775,25 @@ if (typeof jQuery != 'undefined') {
 				t.captions.hide();
 			}
 		},
-		
+
 		setupSlides: function(track) {
 			var t = this;
-				
+
 			t.slides = track;
 			t.slides.entries.imgs = [t.slides.entries.text.length];
 			t.showSlide(0);
-			
+
 		},
-		
+
 		showSlide: function(index) {
 			if (typeof this.tracks == 'undefined' || typeof this.slidesContainer == 'undefined') {
-				return;			
+				return;
 			}
-								
+
 			var t = this,
 				url = t.slides.entries.text[index],
 				img = t.slides.entries.imgs[index];
-				
+
 			if (typeof img == 'undefined' || typeof img.fadeIn == 'undefined') {
 
 				t.slides.entries.imgs[index] = img = $('<img src="' + url + '">')
@@ -4801,39 +4802,39 @@ if (typeof jQuery != 'undefined') {
 								.hide()
 								.fadeIn()
 								.siblings(':visible')
-									.fadeOut();							
-						
+									.fadeOut();
+
 						});
-			
+
 			} else {
-			
+
 				if (!img.is(':visible') && !img.is(':animated')) {
-				
-					//			
-					
+
+					//
+
 					img.fadeIn()
 						.siblings(':visible')
-							.fadeOut();			
+							.fadeOut();
 				}
 			}
-				
+
 		},
-		
+
 		displaySlides: function() {
-		
+
 			if (typeof this.slides == 'undefined')
-				return;	
-				
-			var 
+				return;
+
+			var
 				t = this,
 				slides = t.slides,
-				i;				
-		
+				i;
+
 			for (i=0; i<slides.entries.times.length; i++) {
 				if (t.media.currentTime >= slides.entries.times[i].start && t.media.currentTime <= slides.entries.times[i].stop){
-				
+
 					t.showSlide(i);
-					
+
 					return; // exit out if one is visible;
 				}
 			}
@@ -4987,7 +4988,7 @@ if (typeof jQuery != 'undefined') {
 			pattern_timecode: /^([0-9]{2}:[0-9]{2}:[0-9]{2}([,.][0-9]{1,3})?) --\> ([0-9]{2}:[0-9]{2}:[0-9]{2}([,.][0-9]{3})?)(.*)$/,
 
 			parse: function(trackText) {
-				var 
+				var
 					i = 0,
 					lines = mejs.TrackFormatParser.split2(trackText, /\r?\n/),
 					entries = {text:[], times:[]},
@@ -4998,7 +4999,7 @@ if (typeof jQuery != 'undefined') {
 					if (this.pattern_identifier.exec(lines[i])){
 						// skip to the next line where the start --> end time code should be
 						i++;
-						timecode = this.pattern_timecode.exec(lines[i]);				
+						timecode = this.pattern_timecode.exec(lines[i]);
 
 						if (timecode && i<lines.length){
 							i++;
@@ -5028,7 +5029,7 @@ if (typeof jQuery != 'undefined') {
 		dfxp: {
 			parse: function(trackText) {
 				trackText = $(trackText).filter("tt");
-				var 
+				var
 					i = 0,
 					container = trackText.children("div").eq(0),
 					lines = container.find("p"),
@@ -5064,7 +5065,7 @@ if (typeof jQuery != 'undefined') {
 					if (styles) {
 						style = "";
 						for (var _style in styles) {
-							style += _style + ":" + styles[_style] + ";";					
+							style += _style + ":" + styles[_style] + ";";
 						}
 					}
 					if (style) _temp_times.style = style;
@@ -5109,7 +5110,7 @@ if (typeof jQuery != 'undefined') {
 
 /*
 * ContextMenu Plugin
-* 
+*
 *
 */
 
@@ -5118,13 +5119,13 @@ if (typeof jQuery != 'undefined') {
 $.extend(mejs.MepDefaults,
 	{ 'contextMenuItems': [
 		// demo of a fullscreen option
-		{ 
+		{
 			render: function(player) {
-				
+
 				// check for fullscreen plugin
 				if (typeof player.enterFullScreen == 'undefined')
 					return null;
-			
+
 				if (player.isFullScreen) {
 					return mejs.i18n.t('Turn off Fullscreen');
 				} else {
@@ -5141,7 +5142,7 @@ $.extend(mejs.MepDefaults,
 		}
 		,
 		// demo of a mute/unmute button
-		{ 
+		{
 			render: function(player) {
 				if (player.media.muted) {
 					return mejs.i18n.t('Unmute');
@@ -5163,26 +5164,26 @@ $.extend(mejs.MepDefaults,
 		}
 		,
 		// demo of simple download video
-		{ 
+		{
 			render: function(player) {
 				return mejs.i18n.t('Download Video');
 			},
 			click: function(player) {
 				window.location.href = player.media.currentSrc;
 			}
-		}	
+		}
 	]}
 );
 
 
 	$.extend(MediaElementPlayer.prototype, {
 		buildcontextmenu: function(player, controls, layers, media) {
-			
+
 			// create context menu
 			player.contextMenu = $('<div class="mejs-contextmenu"></div>')
 								.appendTo($('body'))
 								.hide();
-			
+
 			// create events for showing context menu
 			player.container.bind('contextmenu', function(e) {
 				if (player.isContextMenuEnabled) {
@@ -5193,19 +5194,19 @@ $.extend(mejs.MepDefaults,
 			});
 			player.container.bind('click', function() {
 				player.contextMenu.hide();
-			});	
+			});
 			player.contextMenu.bind('mouseleave', function() {
 
 				//
 				player.startContextMenuTimer();
-				
-			});		
+
+			});
 		},
 
 		cleancontextmenu: function(player) {
 			player.contextMenu.remove();
 		},
-		
+
 		isContextMenuEnabled: true,
 		enableContextMenu: function() {
 			this.isContextMenuEnabled = true;
@@ -5213,15 +5214,15 @@ $.extend(mejs.MepDefaults,
 		disableContextMenu: function() {
 			this.isContextMenuEnabled = false;
 		},
-		
+
 		contextMenuTimeout: null,
 		startContextMenuTimer: function() {
 			//
-			
+
 			var t = this;
-			
+
 			t.killContextMenuTimer();
-			
+
 			t.contextMenuTimer = setTimeout(function() {
 				t.hideContextMenu();
 				t.killContextMenuTimer();
@@ -5229,80 +5230,80 @@ $.extend(mejs.MepDefaults,
 		},
 		killContextMenuTimer: function() {
 			var timer = this.contextMenuTimer;
-			
+
 			//
-			
-			if (timer != null) {				
+
+			if (timer != null) {
 				clearTimeout(timer);
 				delete timer;
 				timer = null;
 			}
-		},		
-		
+		},
+
 		hideContextMenu: function() {
 			this.contextMenu.hide();
 		},
-		
+
 		renderContextMenu: function(x,y) {
-			
+
 			// alway re-render the items so that things like "turn fullscreen on" and "turn fullscreen off" are always written correctly
 			var t = this,
 				html = '',
 				items = t.options.contextMenuItems;
-			
+
 			for (var i=0, il=items.length; i<il; i++) {
-				
+
 				if (items[i].isSeparator) {
 					html += '<div class="mejs-contextmenu-separator"></div>';
 				} else {
-				
+
 					var rendered = items[i].render(t);
-				
+
 					// render can return null if the item doesn't need to be used at the moment
 					if (rendered != null) {
 						html += '<div class="mejs-contextmenu-item" data-itemindex="' + i + '" id="element-' + (Math.random()*1000000) + '">' + rendered + '</div>';
 					}
 				}
 			}
-			
+
 			// position and show the context menu
 			t.contextMenu
 				.empty()
 				.append($(html))
 				.css({top:y, left:x})
 				.show();
-				
+
 			// bind events
 			t.contextMenu.find('.mejs-contextmenu-item').each(function() {
-							
+
 				// which one is this?
 				var $dom = $(this),
 					itemIndex = parseInt( $dom.data('itemindex'), 10 ),
 					item = t.options.contextMenuItems[itemIndex];
-				
+
 				// bind extra functionality?
 				if (typeof item.show != 'undefined')
 					item.show( $dom , t);
-				
+
 				// bind click action
-				$dom.click(function() {			
+				$dom.click(function() {
 					// perform click action
 					if (typeof item.click != 'undefined')
 						item.click(t);
-					
+
 					// close
-					t.contextMenu.hide();				
-				});				
-			});	
-			
+					t.contextMenu.hide();
+				});
+			});
+
 			// stop the controls from hiding
 			setTimeout(function() {
-				t.killControlsTimer('rev3');	
+				t.killControlsTimer('rev3');
 			}, 100);
-						
+
 		}
 	});
-	
+
 })(mejs.$);
 
 /**
