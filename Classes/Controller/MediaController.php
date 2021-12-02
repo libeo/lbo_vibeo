@@ -249,6 +249,11 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $media = new Media();
 
+        if ($this->settings['media']['uid']) {
+            /** @var Media $media */
+            $media = $this->mediaRepository->findByUid($this->settings['media']['uid']);
+        }
+
         if ($this->settings['media']['typoscript']) {
             /** @var \TYPO3\CMS\Extbase\Service\TypoScriptService $typoScriptService */
             $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
