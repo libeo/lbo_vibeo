@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file t3:id="1672953284" source-language="en" datatype="plaintext" original="messages" date="2023-01-05T21:14:44Z" product-name="lbo_vibeo">
+		<header/>
+		<body>
+			<trans-unit id="tx_vibeo_domain_model_media" resname="tx_vibeo_domain_model_media" >
+				<source>Media</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.title" resname="tx_vibeo_domain_model_media.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.subtitle" resname="tx_vibeo_domain_model_media.subtitle" >
+				<source>Subtitle</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.author" resname="tx_vibeo_domain_model_media.author" >
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.description" resname="tx_vibeo_domain_model_media.description" >
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.path" resname="tx_vibeo_domain_model_media.path" >
+				<source>Media files (Audio or video)</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.url" resname="tx_vibeo_domain_model_media.url" >
+				<source>Or use an external url (Youtube or Vimeo)</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.image" resname="tx_vibeo_domain_model_media.image" >
+				<source>Image (Video preview)</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.track" resname="tx_vibeo_domain_model_media.track" >
+				<source>Track file (Captions)</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_transcription" resname="tx_vibeo_domain_model_transcription" >
+				<source>Transcript</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_transcription.title" resname="tx_vibeo_domain_model_transcription.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_transcription.description" resname="tx_vibeo_domain_model_transcription.description" >
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_transcription.metadata_title" resname="tx_vibeo_domain_model_transcription.metadata_title" >
+				<source>Metadata : Title</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

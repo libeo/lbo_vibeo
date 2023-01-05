@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file t3:id="1672953259" source-language="en" datatype="plaintext" original="messages" date="2023-01-05T21:14:19Z" product-name="lbo_vibeo">
+		<header/>
+		<body>
+			<trans-unit id="tx_vibeo_domain_model_media" resname="tx_vibeo_domain_model_media" >
+				<source>Media element (Video or audio file)</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.title" resname="tx_vibeo_domain_model_media.title" >
+				<source>Title of this element</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.subtitle" resname="tx_vibeo_domain_model_media.subtitle" >
+				<source>Subtitle of this element</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.author" resname="tx_vibeo_domain_model_media.author" >
+				<source>Author of this video or audio content</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.description" resname="tx_vibeo_domain_model_media.description" >
+				<source>Text description for this element</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.path" resname="tx_vibeo_domain_model_media.path" >
+				<source>Files used for this element. Video and audio elements can have multiple files that will automatically rollback depending on the browser&#039;s supported formats. Possible audio or video formats are: MP4 WEBM OGG MPEG M4V OGV MOV RTMP AAC MP1 MP2 MP3 MPG M4A OGA WAV FLV</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.url" resname="tx_vibeo_domain_model_media.url" >
+				<source>URL of the media file is this is an external video or audio file</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.image" resname="tx_vibeo_domain_model_media.image" >
+				<source>Replacement image if the video or audio file cannot be played.</source>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.track" resname="tx_vibeo_domain_model_media.track" >
+				<source>Track files used for subtitles during video playback. Possible formats are: VTT TTML SRT TXT CSV XML </source>
+			</trans-unit>
+			<trans-unit id="player.tooltip" resname="player.tooltip" >
+				<source>Help</source>
+			</trans-unit>
+			<trans-unit id="player.playText" resname="player.playText" >
+				<source>Play</source>
+			</trans-unit>
+			<trans-unit id="player.pauseText" resname="player.pauseText" >
+				<source>Pause</source>
+			</trans-unit>
+			<trans-unit id="player.fullscreenText" resname="player.fullscreenText" >
+				<source>Toggle fullscreen mode</source>
+			</trans-unit>
+			<trans-unit id="player.unFullscreenText" resname="player.unFullscreenText" >
+				<source>Quit fullscreen mode</source>
+			</trans-unit>
+			<trans-unit id="player.muteTextMute" resname="player.muteTextMute" >
+				<source>Mute</source>
+			</trans-unit>
+			<trans-unit id="player.muteTextUnmute" resname="player.muteTextUnmute" >
+				<source>Unmute</source>
+			</trans-unit>
+			<trans-unit id="player.volumeUpText" resname="player.volumeUpText" >
+				<source>Turn up volume</source>
+			</trans-unit>
+			<trans-unit id="player.volumeDownText" resname="player.volumeDownText" >
+				<source>Turn down volume</source>
+			</trans-unit>
+			<trans-unit id="player.tracksTextTurnOn" resname="player.tracksTextTurnOn" >
+				<source>Activate subtitles</source>
+			</trans-unit>
+			<trans-unit id="player.tracksTextTurnOff" resname="player.tracksTextTurnOff" >
+				<source>Deactivate subtitles</source>
+			</trans-unit>
+			<trans-unit id="player.rewindText" resname="player.rewindText" >
+				<source>Rewind</source>
+			</trans-unit>
+			<trans-unit id="player.forwardText" resname="player.forwardText" >
+				<source>Forward</source>
+			</trans-unit>
+			<trans-unit id="player.hour" resname="player.hour" >
+				<source>hours</source>
+			</trans-unit>
+			<trans-unit id="player.minutes" resname="player.minutes" >
+				<source>minutes</source>
+			</trans-unit>
+			<trans-unit id="player.seconds" resname="player.seconds" >
+				<source>seconds</source>
+			</trans-unit>
+			<trans-unit id="player.cannotPlayVideo" resname="player.cannotPlayVideo" >
+				<source>The player cannot play this video.</source>
+			</trans-unit>
+			<trans-unit id="player.accessibilityWarning" resname="player.accessibilityWarning" >
+				<source>By clicking on the video, you will change the context of this page.</source>
+			</trans-unit>
+			<trans-unit id="player.transcription" resname="player.transcription" >
+				<source>Transcript</source>
+			</trans-unit>
+			<trans-unit id="player.download" resname="player.download" >
+				<source>Download</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

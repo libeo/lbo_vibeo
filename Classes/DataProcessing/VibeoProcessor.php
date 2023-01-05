@@ -32,8 +32,7 @@ class VibeoProcessor implements DataProcessorInterface
      */
     public function __construct()
     {
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        $this->mediaRepository = $objectManager->get(MediaRepository::class);
+        $this->mediaRepository = GeneralUtility::makeInstance(MediaRepository::class);
     }
 
     /**

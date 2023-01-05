@@ -9,3 +9,4 @@ TYPO3 Vibeo integration to include an accessible video player on page.
 | TYPO3 Version 	| Plugin version 	|
 |-	|-	|
 | 10.4 	| 1.* 	|
+| 11.5 	| 2.* 	|

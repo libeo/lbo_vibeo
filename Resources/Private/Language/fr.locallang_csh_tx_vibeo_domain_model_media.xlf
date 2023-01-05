@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file t3:id="1672953278" source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2023-01-05T21:14:38Z" product-name="lbo_vibeo">
+		<header/>
+		<body>
+			<trans-unit id="title.description" resname="title.description"  approved="yes">
+				<source>Title of this element</source>
+				<target>Titre de cet élément</target>
+			</trans-unit>
+			<trans-unit id="subtitle.description" resname="subtitle.description"  approved="yes">
+				<source>Subtitle of this element</source>
+				<target>Sous-titre de cet élément</target>
+			</trans-unit>
+			<trans-unit id="author.description" resname="author.description"  approved="yes">
+				<source>Author of this video or audio content</source>
+				<target>Auteur de cet élément</target>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description"  approved="yes">
+				<source>Text description for this element</source>
+				<target>Description textuelle de cet élément</target>
+			</trans-unit>
+			<trans-unit id="path.description" resname="path.description"  approved="yes">
+				<source>Files used for this element. Video and audio elements can have multiple files that will automatically rollback depending on the browser&#039;s supported formats. Possible audio or video formats are: MP4 WEBM OGG MPEG M4V OGV MOV RTMP AAC MP1 MP2 MP3 MPG M4A OGA WAV FLV WMV</source>
+				<target>Fichiers vidéos ou audio utilisés. Les éléments audio ou vidéo peuvent avoir plusieurs fichiers qui s&#039;interchangeront en fonction des formats supportés par le navigateur. Les formats possibles sont: MP4 WEBM OGG MPEG M4V OGV MOV RTMP AAC MP1 MP2 MP3 MPG M4A OGA WAV FLV</target>
+			</trans-unit>
+			<trans-unit id="url.description" resname="url.description"  approved="yes">
+				<source>URL of the media file is this is an external video or audio file</source>
+				<target>URL du vidéo si vous voulez afficher un vidéo externe. Les fournisseurs supportés sont Youtube et Vimeo</target>
+			</trans-unit>
+			<trans-unit id="image.description" resname="image.description"  approved="yes">
+				<source>Preview image, also used as replacement image if the video or audio file cannot be played.</source>
+				<target>Image de prévisualisation, aussi utilisée comme remplacement si les fichiers audio ou vidéos ne peuvent pas être lus.</target>
+			</trans-unit>
+			<trans-unit id="track.description" resname="track.description"  approved="yes">
+				<source>Track files used for subtitles during video playback. Possible formats are: VTT TTML SRT TXT CSV XML </source>
+				<target>Fichiers sous-titres utilisés durant la lecture du vidéo. Les formats possibles sont: VTT TTML SRT TXT CSV XML</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

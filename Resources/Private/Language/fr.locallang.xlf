@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file t3:id="1672953259" source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2023-01-05T21:14:19Z" product-name="lbo_vibeo">
+		<header/>
+		<body>
+			<trans-unit id="tx_vibeo_domain_model_media" resname="tx_vibeo_domain_model_media"  approved="yes">
+				<source>Media element (Video or audio file)</source>
+				<target>Élément média (Fichier vidéo ou audio)</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.title" resname="tx_vibeo_domain_model_media.title"  approved="yes">
+				<source>Title of this element</source>
+				<target>Titre de cet élément</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.subtitle" resname="tx_vibeo_domain_model_media.subtitle"  approved="yes">
+				<source>Subtitle of this element</source>
+				<target>Sous-titre de cet élément</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.author" resname="tx_vibeo_domain_model_media.author"  approved="yes">
+				<source>Author of this video or audio content</source>
+				<target>Auteur de cet élément</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.description" resname="tx_vibeo_domain_model_media.description"  approved="yes">
+				<source>Text description for this element</source>
+				<target>Description textuelle de cet élément</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.path" resname="tx_vibeo_domain_model_media.path"  approved="yes">
+				<source>Files used for this element. Video and audio elements can have multiple files that will automatically rollback depending on the browser&#039;s supported formats. Possible audio or video formats are: MP4 WEBM OGG MPEG M4V OGV MOV RTMP AAC MP1 MP2 MP3 MPG M4A OGA WAV FLV</source>
+				<target>Fichiers vidéos ou audio utilisés. Les éléments audio ou vidéo peuvent avoir plusieurs fichiers qui s&#039;interchangeront en fonction des formats supportés par le navigateur. Les formats possibles sont: MP4 WEBM OGG MPEG M4V OGV MOV RTMP AAC MP1 MP2 MP3 MPG M4A OGA WAV FLV</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.url" resname="tx_vibeo_domain_model_media.url"  approved="yes">
+				<source>URL of the media file is this is an external video or audio file</source>
+				<target>URL du vidéo si vous voulez afficher un vidéo externe. Les fournisseurs supportés sont Youtube et Vimeo</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.image" resname="tx_vibeo_domain_model_media.image"  approved="yes">
+				<source>Replacement image if the video or audio file cannot be played.</source>
+				<target>Image de prévisualisation, aussi utilisée comme remplacement si les fichiers audio ou vidéos ne peuvent pas être lus.</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.track" resname="tx_vibeo_domain_model_media.track"  approved="yes">
+				<source>Track files used for subtitles during video playback. Possible formats are: VTT TTML SRT TXT CSV XML </source>
+				<target>Fichiers sous-titres utilisés durant la lecture du vidéo. Les formats possibles sont: VTT TTML SRT TXT CSV XML </target>
+			</trans-unit>
+			<trans-unit id="player.tooltip" resname="player.tooltip"  approved="yes">
+				<source>Help</source>
+				<target>Aide</target>
+			</trans-unit>
+			<trans-unit id="player.playText" resname="player.playText"  approved="yes">
+				<source>Play</source>
+				<target>Jouer</target>
+			</trans-unit>
+			<trans-unit id="player.pauseText" resname="player.pauseText"  approved="yes">
+				<source>Pause</source>
+				<target>Mettre en pause</target>
+			</trans-unit>
+			<trans-unit id="player.fullscreenText" resname="player.fullscreenText"  approved="yes">
+				<source>Toggle fullscreen mode</source>
+				<target>Activer le mode plein écran</target>
+			</trans-unit>
+			<trans-unit id="player.unFullscreenText" resname="player.unFullscreenText"  approved="yes">
+				<source>Quit fullscreen mode</source>
+				<target>Quitter le mode plein écran</target>
+			</trans-unit>
+			<trans-unit id="player.muteTextMute" resname="player.muteTextMute"  approved="yes">
+				<source>Mute</source>
+				<target>Couper le volume</target>
+			</trans-unit>
+			<trans-unit id="player.muteTextUnmute" resname="player.muteTextUnmute"  approved="yes">
+				<source>Unmute</source>
+				<target>Ouvrir le volume</target>
+			</trans-unit>
+			<trans-unit id="player.volumeUpText" resname="player.volumeUpText"  approved="yes">
+				<source>Turn up volume</source>
+				<target>Monter le volume</target>
+			</trans-unit>
+			<trans-unit id="player.volumeDownText" resname="player.volumeDownText"  approved="yes">
+				<source>Turn down volume</source>
+				<target>Descendre le volume</target>
+			</trans-unit>
+			<trans-unit id="player.tracksTextTurnOn" resname="player.tracksTextTurnOn"  approved="yes">
+				<source>Activate subtitles</source>
+				<target>Activer les sous-titres</target>
+			</trans-unit>
+			<trans-unit id="player.tracksTextTurnOff" resname="player.tracksTextTurnOff"  approved="yes">
+				<source>Deactivate subtitles</source>
+				<target>Désactiver les sous-titres</target>
+			</trans-unit>
+			<trans-unit id="player.rewindText" resname="player.rewindText"  approved="yes">
+				<source>Rewind</source>
+				<target>Reculer</target>
+			</trans-unit>
+			<trans-unit id="player.forwardText" resname="player.forwardText"  approved="yes">
+				<source>Forward</source>
+				<target>Avancer</target>
+			</trans-unit>
+			<trans-unit id="player.hour" resname="player.hour"  approved="yes">
+				<source>hours</source>
+				<target>heures</target>
+			</trans-unit>
+			<trans-unit id="player.minutes" resname="player.minutes"  approved="yes">
+				<source>minutes</source>
+				<target>minutes</target>
+			</trans-unit>
+			<trans-unit id="player.seconds" resname="player.seconds"  approved="yes">
+				<source>seconds</source>
+				<target>secondes</target>
+			</trans-unit>
+			<trans-unit id="player.cannotPlayVideo" resname="player.cannotPlayVideo"  approved="yes">
+				<source>The player cannot play this video.</source>
+				<target>Aucune possibilité de jouer la vidéo.</target>
+			</trans-unit>
+			<trans-unit id="player.accessibilityWarning" resname="player.accessibilityWarning"  approved="yes">
+				<source>By clicking on the video, you will change the context of this page.</source>
+				<target>En appuyant sur le vidéo, vous changerez le contexte de la page.</target>
+			</trans-unit>
+			<trans-unit id="player.transcription" resname="player.transcription"  approved="yes">
+				<source>Transcript</source>
+				<target>Transcription textuelle</target>
+			</trans-unit>
+			<trans-unit id="player.download" resname="player.download"  approved="yes">
+				<source>Download</source>
+				<target>Télécharger</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

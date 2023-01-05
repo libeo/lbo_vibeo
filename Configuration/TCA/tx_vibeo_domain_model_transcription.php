@@ -5,7 +5,7 @@ if (!defined ('TYPO3_MODE')) {
 
 return [
     'ctrl' => [
-        'title'	=> 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_transcription',
+        'title'	=> 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xlf:tx_vibeo_domain_model_transcription',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -109,7 +109,7 @@ return [
         ],
         'title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_transcription.title',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xlf:tx_vibeo_domain_model_transcription.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -118,7 +118,7 @@ return [
         ],
         'description' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_transcription.description',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xlf:tx_vibeo_domain_model_transcription.description',
             'config' => array(
                 'type' => 'text',
                 'cols' => 40,
@@ -134,7 +134,7 @@ return [
         ],
         'metadata_title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xml:tx_vibeo_domain_model_transcription.metadata_title',
+            'label' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xlf:tx_vibeo_domain_model_transcription.metadata_title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,

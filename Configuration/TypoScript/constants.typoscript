@@ -119,22 +119,22 @@ plugin.tx_lbovibeo {
 
 			# Everything below is for translation of texts inside the player.
 			# You can use LLL references or direct strings.
-			tooltip = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.tooltip
-			playText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.playText
-			pauseText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.pauseText
-			fullscreenText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.fullscreenText
-			unFullscreenText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.unFullscreenText
-			muteTextMute = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.muteTextMute
-			muteTextUnmute = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.muteTextUnmute
-			volumeUpText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.volumeUpText
-			volumeDownText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.volumeDownText
-			tracksTextTurnOn = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.tracksTextTurnOn
-			tracksTextTurnOff = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.tracksTextTurnOff
-			rewindText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.rewindText
-			forwardText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.forwardText
-			hour = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.hour
-			minutes = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.minutes
-			seconds = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xml:player.seconds
+			tooltip = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.tooltip
+			playText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.playText
+			pauseText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.pauseText
+			fullscreenText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.fullscreenText
+			unFullscreenText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.unFullscreenText
+			muteTextMute = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.muteTextMute
+			muteTextUnmute = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.muteTextUnmute
+			volumeUpText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.volumeUpText
+			volumeDownText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.volumeDownText
+			tracksTextTurnOn = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.tracksTextTurnOn
+			tracksTextTurnOff = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.tracksTextTurnOff
+			rewindText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.rewindText
+			forwardText = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.forwardText
+			hour = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.hour
+			minutes = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.minutes
+			seconds = LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang.xlf:player.seconds
 		}
 
 		list {

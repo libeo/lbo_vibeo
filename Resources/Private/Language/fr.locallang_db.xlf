@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file t3:id="1672953284" source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2023-01-05T21:14:44Z" product-name="lbo_vibeo">
+		<header/>
+		<body>
+			<trans-unit id="tx_vibeo_domain_model_media" resname="tx_vibeo_domain_model_media"  approved="yes">
+				<source>Media</source>
+				<target>Média</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.title" resname="tx_vibeo_domain_model_media.title"  approved="yes">
+				<source>Title</source>
+				<target>Titre</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.subtitle" resname="tx_vibeo_domain_model_media.subtitle"  approved="yes">
+				<source>Subtitle</source>
+				<target>Sous-titre</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.author" resname="tx_vibeo_domain_model_media.author"  approved="yes">
+				<source>Author</source>
+				<target>Auteur</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.description" resname="tx_vibeo_domain_model_media.description"  approved="yes">
+				<source>Description</source>
+				<target>Description</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.path" resname="tx_vibeo_domain_model_media.path"  approved="yes">
+				<source>Media files (Audio or video)</source>
+				<target>Fichiers vidéos ou audio utilisés.</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.url" resname="tx_vibeo_domain_model_media.url"  approved="yes">
+				<source>Or use an external url (Youtube or Vimeo)</source>
+				<target>Ou, utilisez un fichier externe en écriant le URL (adresse) (Youtube or Vimeo)</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.image" resname="tx_vibeo_domain_model_media.image"  approved="yes">
+				<source>Image (Video preview)</source>
+				<target>Image (Prévisualisation du vidéo)</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_media.track" resname="tx_vibeo_domain_model_media.track"  approved="yes">
+				<source>Track file (Captions)</source>
+				<target>Fichier des sous-titres</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_transcription" resname="tx_vibeo_domain_model_transcription"  approved="yes">
+				<source>Transcript</source>
+				<target>Transcription textuelle</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_transcription.title" resname="tx_vibeo_domain_model_transcription.title"  approved="yes">
+				<source>Title</source>
+				<target>Titre</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_transcription.description" resname="tx_vibeo_domain_model_transcription.description"  approved="yes">
+				<source>Description</source>
+				<target>Description</target>
+			</trans-unit>
+			<trans-unit id="tx_vibeo_domain_model_transcription.metadata_title" resname="tx_vibeo_domain_model_transcription.metadata_title"  approved="yes">
+				<source>Metadata : Title</source>
+				<target>Méta-données : Titre</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

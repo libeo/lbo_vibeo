@@ -2,6 +2,9 @@
 
 namespace Libeo\Vibeo\Domain\Model;
 
+use TYPO3\CMS\Core\Context\Context;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -119,7 +122,8 @@ class Transcription extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return string
 	 */
 	public function getIsDifferentTagLanguageOfPage() {
-		if($GLOBALS['TSFE']->sys_language_uid != $this->_languageUid) {
+        $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
+		if($languageAspect->getId() != $this->_languageUid) {
 			return $this->_languageUid;
 		} else {
 			return false;

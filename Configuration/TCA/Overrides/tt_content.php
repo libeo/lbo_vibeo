@@ -17,7 +17,7 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSi
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
-    'FILE:EXT:lbo_vibeo/Configuration/FlexForms/flexform_vibeomedialist.xml'
+    'FILE:EXT:lbo_vibeo/Configuration/FlexForms/flexform_vibeomedialist.xlf'
 );
 // END - List
 
@@ -33,14 +33,14 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSi
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
-    'FILE:EXT:lbo_vibeo/Configuration/FlexForms/flexform_vibeosinglemedia.xml'
+    'FILE:EXT:lbo_vibeo/Configuration/FlexForms/flexform_vibeosinglemedia.xlf'
 );
 
 // END - Single
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
     'tx_vibeo_domain_model_media',
-    'EXT:lbo_vibeo/Resources/Private/Language/locallang_csh_tx_vibeo_domain_model_media.xml'
+    'EXT:lbo_vibeo/Resources/Private/Language/locallang_csh_tx_vibeo_domain_model_media.xlf'
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_vibeo_domain_model_media');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_vibeo_domain_model_transcription');

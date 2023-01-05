@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file t3:id="1672953246" source-language="en" datatype="plaintext" original="messages" date="2023-01-05T21:14:06Z" product-name="lbo_vibeo">
+		<header/>
+		<body>
+			<trans-unit id="vibeomedialist.title" resname="vibeomedialist.title" >
+				<source>Accessible list of media files</source>
+			</trans-unit>
+			<trans-unit id="vibeomedialist.description" resname="vibeomedialist.description" >
+				<source>List of media records (audio/video) played using Vibeo&#039;s accessible player</source>
+			</trans-unit>
+			<trans-unit id="vibeosinglemedia.title" resname="vibeosinglemedia.title" >
+				<source>Accessible media file</source>
+			</trans-unit>
+			<trans-unit id="vibeosinglemedia.description" resname="vibeosinglemedia.description" >
+				<source>Single media file (audio/video) played using Vibeo&#039;s accessible player</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

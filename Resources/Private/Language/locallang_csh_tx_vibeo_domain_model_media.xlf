@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file t3:id="1672953278" source-language="en" datatype="plaintext" original="messages" date="2023-01-05T21:14:38Z" product-name="lbo_vibeo">
+		<header/>
+		<body>
+			<trans-unit id="title.description" resname="title.description" >
+				<source>Title of this element</source>
+			</trans-unit>
+			<trans-unit id="subtitle.description" resname="subtitle.description" >
+				<source>Subtitle of this element</source>
+			</trans-unit>
+			<trans-unit id="author.description" resname="author.description" >
+				<source>Author of this video or audio content</source>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description" >
+				<source>Text description for this element</source>
+			</trans-unit>
+			<trans-unit id="path.description" resname="path.description" >
+				<source>Files used for this element. Video and audio elements can have multiple files that will automatically rollback depending on the browser&#039;s supported formats. Possible audio or video formats are: MP4 WEBM OGG MPEG M4V OGV MOV RTMP AAC MP1 MP2 MP3 MPG M4A OGA WAV FLV WMV</source>
+			</trans-unit>
+			<trans-unit id="url.description" resname="url.description" >
+				<source>URL of the media file is this is an external video or audio file</source>
+			</trans-unit>
+			<trans-unit id="image.description" resname="image.description" >
+				<source>Preview image, also used as replacement image if the video or audio file cannot be played.</source>
+			</trans-unit>
+			<trans-unit id="track.description" resname="track.description" >
+				<source>Track files used for subtitles during video playback. Possible formats are: VTT TTML SRT TXT CSV XML </source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -2,6 +2,10 @@
 
 namespace Libeo\Vibeo\Utility;
 
+use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\MathUtility;
+
 /**
  * Resolv path Fal, relative link, user_upload
  *
@@ -35,8 +39,8 @@ class Path {
 		if (strpos($path, 't3://file') === 0) {
 			$fileUid = substr($path, 14);
 
-			if (\TYPO3\CMS\Core\Utility\MathUtility::canBeInterpretedAsInteger($fileUid)) {
-				$fileObject = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance()->getFileObject($fileUid);
+			if (MathUtility::canBeInterpretedAsInteger($fileUid)) {
+				$fileObject = GeneralUtility::makeInstance(ResourceFactory::class)->getFileObject($fileUid);
 				if ($fileObject instanceof \TYPO3\CMS\Core\Resource\FileInterface) {
 					$path = $fileObject->getPublicUrl();
 				}
