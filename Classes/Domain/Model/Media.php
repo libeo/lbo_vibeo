@@ -363,6 +363,9 @@ class Media extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	* Utility function to get MIME type of supported audio and video formats
 	*/
 	protected function getMimeTypeFromFile($file) {
+        if (!$file) {
+            return '';
+        }
 		if(function_exists('finfo_open')) {
 			$finfo = finfo_open(FILEINFO_MIME_TYPE);
 			$mime = finfo_file($finfo, $file);
