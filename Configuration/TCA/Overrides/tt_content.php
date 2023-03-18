@@ -13,8 +13,6 @@ $pluginSignature = 'lbovibeo_vibeomedialist';
     'Vibeo media list'
 );
 
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,recursive,select_key,pages';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
     'FILE:EXT:lbo_vibeo/Configuration/FlexForms/flexform_vibeomedialist.xml'
@@ -29,8 +27,6 @@ $pluginSignature = 'lbovibeo_vibeosinglemedia';
     'Vibeo single media'
 );
 
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,recursive,select_key,pages';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
     'FILE:EXT:lbo_vibeo/Configuration/FlexForms/flexform_vibeosinglemedia.xml'
