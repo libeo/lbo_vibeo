@@ -65,7 +65,11 @@ class TranscriptController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 	 * @param int $backPid
 	 * @return void
 	 */
-	public function showAction(Transcription $transcription, $backPid) {
+	public function showAction(Transcription $transcription = null, $backPid = 0) {
+        if (!$transcription) {
+            return 'Aucune transcription à afficher.';
+        }
+
 		$register['transcriptTitle'] = $transcription->getMetadataTitle();
         $this->configurationManager->getContentObject()->cObjGetSingle('LOAD_REGISTER', $register);
 
