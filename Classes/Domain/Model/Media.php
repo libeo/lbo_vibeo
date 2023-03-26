@@ -351,7 +351,7 @@ class Media extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		} elseif(!empty($media[0])) {
 			$resolver = Path::getInstance();
 			$filepath = $resolver::resolvePath($media[0]);
-			$mime = $this->getMimeTypeFromFile(GeneralUtility::getFileAbsFileName($filepath));
+			$mime = $this->getMimeByExtension($filepath);
 			$this->setFileType($mime);
 			$this->setMediaType(substr($mime,0,strpos($mime,'/')));
 		}
