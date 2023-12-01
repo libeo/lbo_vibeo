@@ -289,6 +289,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
         $this->view->assign('settings', $this->settings); // Reassign because we changed the settings
         $this->view->assign('media', $media);
+        $this->view->assign('youtubeEmbed', $this->getYoutubeEmbedUrl($media->getUrl()));
         $this->view->assign('contentObject', $this->configurationManager->getContentObject()->data);
         $this->view->assign('extRelativePath', PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)));
         $this->view->assign('transcription', $this->settings['media']['transcription']);
@@ -324,6 +325,24 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                 );
             });
 		');
+    }
+
+    private static function getYoutubeEmbedUrl($url)
+    {
+        if (strstr($url, 'youtube') === false) {
+            return false;
+        }
+        $shortUrlRegex = '/youtu.be\/([a-zA-Z0-9_-]+)\??/i';
+        $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+
+        if (preg_match($longUrlRegex, $url, $matches)) {
+            $youtube_id = $matches[count($matches) - 1];
+        }
+
+        if (preg_match($shortUrlRegex, $url, $matches)) {
+            $youtube_id = $matches[count($matches) - 1];
+        }
+        return 'https://www.youtube-nocookie.com/embed/' . $youtube_id ;
     }
 
     private static function is_url_exist($url)
