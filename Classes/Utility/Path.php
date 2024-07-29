@@ -13,18 +13,22 @@ use TYPO3\CMS\Core\Utility\MathUtility;
  * @subpackage Fluid
  * @version
  */
-class Path {
+class Path
+{
 
-	public static $_this = null;
+    public static $_this = null;
 
-	private function __contruct() {}
+    private function __contruct()
+    {
+    }
 
-	public static function getInstance() {
-		if (self::$_this === null) {
-			self::$_this = new Path();
-		}
-		return self::$_this;
-	}
+    public static function getInstance()
+    {
+        if (self::$_this === null) {
+            self::$_this = new Path();
+        }
+        return self::$_this;
+    }
 
    /**
     * vibeo path Backward compatibility layer
@@ -35,22 +39,20 @@ class Path {
     * @param string $path
     * @return string
     */
-   public static function resolvePath($path) {
-		if (strpos($path, 't3://file') === 0) {
-			$fileUid = substr($path, 14);
+    public static function resolvePath($path)
+    {
+        if (strpos($path, 't3://file') === 0) {
+            $fileUid = substr($path, 14);
 
-			if (MathUtility::canBeInterpretedAsInteger($fileUid)) {
-				$fileObject = GeneralUtility::makeInstance(ResourceFactory::class)->getFileObject($fileUid);
-				if ($fileObject instanceof \TYPO3\CMS\Core\Resource\FileInterface) {
-					$path = $fileObject->getPublicUrl();
-				}
-
-			}
-		} else if (strpos($path, '/') === false) {
-			$path = 'uploads/tx_vibeo/'.$path;
-		}
-		return $path;
-   }
+            if (MathUtility::canBeInterpretedAsInteger($fileUid)) {
+                $fileObject = GeneralUtility::makeInstance(ResourceFactory::class)->getFileObject($fileUid);
+                if ($fileObject instanceof \TYPO3\CMS\Core\Resource\FileInterface) {
+                    $path = $fileObject->getPublicUrl();
+                }
+            }
+        } elseif (strpos($path, '/') === false) {
+            $path = 'uploads/tx_vibeo/'.$path;
+        }
+        return $path;
+    }
 }
-
-?>

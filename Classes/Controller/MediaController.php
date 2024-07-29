@@ -5,6 +5,7 @@ namespace Libeo\Vibeo\Controller;
 use Libeo\Vibeo\Domain\Model\Media;
 use Libeo\Vibeo\Domain\Repository\MediaRepository;
 use Libeo\Vibeo\Domain\Repository\TranscriptionRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -129,32 +130,32 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         if (!self::$headerIncluded) {
             $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
 
-            if ($this->settings['includes']['jquery']) {
+            if ($this->settings['includes']['jquery'] ?? false) {
                 $pageRenderer->addJsFooterLibrary('jquery-1.7.2', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', null, false, true, '', true);
             }
 
-            if ($this->settings['includes']['mediaelement']) {
-                $pageRenderer->addJsFooterFile(PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)) . 'Resources/Public/Vibeo/mediaelement-and-player.min.js', null, false, false, '', true);
+            if ($this->settings['includes']['mediaelement'] ?? false) {
+                $pageRenderer->addJsFooterFile('EXT:lbo_vibeo/Resources/Public/Vibeo/mediaelement-and-player.min.js', null, false, false, '', true);
             }
 
-            if ($this->settings['includes']['jquery-resize']) {
-                $pageRenderer->addJsFooterFile(PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)) . 'Resources/Public/Vibeo/jquery.ba-resize.min.js', null, false, false, '', true);
+            if ($this->settings['includes']['jquery-resize'] ?? false) {
+                $pageRenderer->addJsFooterFile('EXT:lbo_vibeo/Resources/Public/Vibeo/jquery.ba-resize.min.js', null, false, false, '', true);
             }
 
-            if ($this->settings['includes']['modernizr']) {
-                $pageRenderer->addJsFooterFile(PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)) . 'Resources/Public/Vibeo/modernizr-2.5.3.js', null, false, false, '', true);
+            if ($this->settings['includes']['modernizr'] ?? false) {
+                $pageRenderer->addJsFooterFile('EXT:lbo_vibeo/Resources/Public/Vibeo/modernizr-2.5.3.js', null, false, false, '', true);
             }
 
-            if ($this->settings['includes']['css']) {
-                $pageRenderer->addCssFile(PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)) . 'Resources/Public/CSS/tx-vibeo.css');
+            if ($this->settings['includes']['css'] ?? false) {
+                $pageRenderer->addCssFile('EXT:lbo_vibeo/Resources/Public/CSS/tx-vibeo.css');
             }
 
-            if ($this->settings['includes']['mediaelement-css']) {
-                $pageRenderer->addCssFile(PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)) . 'Resources/Public/Vibeo/mediaelementplayer.css');
+            if ($this->settings['includes']['mediaelement-css'] ?? false) {
+                $pageRenderer->addCssFile('EXT:lbo_vibeo/Resources/Public/Vibeo/mediaelementplayer.css');
             }
 
-            if ($this->settings['includes']['mediaelement-skin-css']) {
-                $pageRenderer->addCssFile(PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)) . 'Resources/Public/Vibeo/skin-gray.css');
+            if ($this->settings['includes']['mediaelement-skin-css'] ?? false) {
+                $pageRenderer->addCssFile('EXT:lbo_vibeo/Resources/Public/Vibeo/skin-gray.css');
             }
 
             self::$headerIncluded = true;
@@ -188,19 +189,19 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             if ($value === '' || in_array($param, $ignore)) {
                 continue;
             }
-            if (strpos($value, 'LLL:') === 0) // Language label
-            {
+            if (strpos($value, 'LLL:') === 0) { // Language label
                 $options[] = $param . ': "' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($value, $this->extKey) . '"';
             } else {
-                $options[] = $param . ':' . (is_numeric($value) || $value === 'true' || $value === 'false' || substr($value,
-                        0, 8) == 'function' || $value[0] === '[' ? $value : '"' . $value . '"');
+                $options[] = $param . ':' . (is_numeric($value) || $value === 'true' || $value === 'false' || substr(
+                    $value,
+                    0,
+                    8
+                ) == 'function' || $value[0] === '[' ? $value : '"' . $value . '"');
             }
         }
 
         if (!isset($this->settings['player']['hideContextualMenu'])) {
-
             array_push($options, 'hideContextualMenu:1');
-
         }
 
         // Add callback function. Moved to TS
@@ -212,16 +213,16 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * action list
      *
-     * @return void
+     * @return ResponseInterface
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $pid = explode(',', $this->settings['records']['pages']);
         $uid = explode(',', $this->settings['records']['media']);
 
         $medias = empty($uid) && empty($pid) ? array() : $this->mediaRepository->findByUidOrPid($uid, $pid);
 
-        if ($this->settings['list']['startWithThumbnails']) {
+        if ($this->settings['list']['startWithThumbnails'] ?? false) {
             unset($this->settings['player']['defaultVideoWidth'], $this->settings['player']['defaultVideoHeight']);
 
             $this->view->assign('finalVideoWidth', $this->settings['player']['videoWidth']);
@@ -234,34 +235,35 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('settings', $this->settings); // Reassign because we changed the settings
         $this->view->assign('medias', $medias);
         $this->view->assign('JSPlayerConfigurationString', $this->getJSPlayerConfigurationString());
-        $this->view->assign('extRelativePath', PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)));
         $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-        $pageRenderer->addJsFooterFile(PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)) . 'Resources/Public/Vibeo/vibeo.js', null, false, false, '', true);
+        $pageRenderer->addJsFooterFile('EXT:lbo_vibeo/Resources/Public/Vibeo/vibeo.js', null, false, false, '', true);
+
+        return $this->htmlResponse();
     }
 
     /**
      * action show
      *
      * @param Media $media
-     * @return void
+     * @return ResponseInterface
      */
-    public function singleAction()
+    public function singleAction(): ResponseInterface
     {
         $media = new Media();
 
-        if ($this->settings['media']['uid']) {
+        if ($this->settings['media']['uid'] ?? false) {
             /** @var Media $media */
             $media = $this->mediaRepository->findByUid($this->settings['media']['uid']);
         }
 
-        if ($this->settings['media']['typoscript']) {
+        if ($this->settings['media']['typoscript'] ?? false) {
             /** @var \TYPO3\CMS\Extbase\Service\TypoScriptService $typoScriptService */
             $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
             $typoScriptArray = $typoScriptService->convertPlainArrayToTypoScriptArray($this->settings['media']['typoscript']);
             $stdWrapProperties = GeneralUtility::trimExplode(',', $this->settings['media']['typoscript']['useStdWrap'], true);
             foreach ($stdWrapProperties as $key) {
                 if (is_array($typoScriptArray[$key . '.'])) {
-                    $this->settings['media'][$key] = $this->configurationManager->getContentObject()->stdWrap(
+                    $this->settings['media'][$key] = $this->request->getAttribute('currentContentObject')->stdWrap(
                         $typoScriptArray[$key],
                         $typoScriptArray[$key . '.']
                     );
@@ -269,19 +271,19 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             }
         }
 
-        if ($this->settings['media']['files']) {
+        if ($this->settings['media']['files'] ?? false) {
             $media->setPath($this->settings['media']['files']);
         }
-        if ($this->settings['media']['description']) {
+        if ($this->settings['media']['description'] ?? false) {
             $media->setDescription($this->settings['media']['description']);
         }
-        if ($this->settings['media']['url']) {
+        if ($this->settings['media']['url'] ?? false) {
             $media->setUrl($this->settings['media']['url']);
         }
-        if ($this->settings['media']['image']) {
+        if ($this->settings['media']['image'] ?? false) {
             $media->setImage($this->settings['media']['image']);
         }
-        if ($this->settings['media']['track']) {
+        if ($this->settings['media']['track'] ?? false) {
             $media->setTrack($this->settings['media']['track']);
         }
 
@@ -290,14 +292,14 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('settings', $this->settings); // Reassign because we changed the settings
         $this->view->assign('media', $media);
         $this->view->assign('youtubeEmbed', $this->getYoutubeEmbedUrl($media->getUrl()));
-        $this->view->assign('contentObject', $this->configurationManager->getContentObject()->data);
+        $this->view->assign('contentObject', $this->request->getAttribute('currentContentObject')->data);
         $this->view->assign('extRelativePath', PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)));
         $this->view->assign('transcription', $this->settings['media']['transcription']);
         $this->view->assign('downloadable', $this->settings['player']['downloadable']);
-        $this->view->assign('pageUid', $GLOBALS['TSFE']->id);
+        $this->view->assign('pageUid', $this->request->getAttribute('routing')->getPageId());
 
         $arrayFallback = array();
-        if ($media->getUrl()) {
+        if ($media->getUrl() ?? false) {
             $originalExtension = pathinfo($media->getUrl(), PATHINFO_EXTENSION);
             foreach ($this->fallbackExtensionArray as $newExtension) {
                 if ($newExtension != $originalExtension && strlen($media->getUrl()) > strlen($originalExtension)) {
@@ -325,6 +327,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                 );
             });
 		');
+        return $this->htmlResponse();
     }
 
     private static function getYoutubeEmbedUrl($url)
@@ -363,9 +366,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     protected function getUniqId()
     {
-        $this->contentObj = $this->configurationManager->getContentObject();
-        return $this->contentObj->data['uid'] ? $this->contentObj->data['uid'] : GeneralUtility::md5int($this->contentObj->data[0] ?: 0);
+        $this->contentObj = $this->request->getAttribute('currentContentObject');
+        return $this->contentObj->data['uid'] ?: GeneralUtility::md5int($this->contentObj->data[0] ?: 0);
     }
-
 }
-

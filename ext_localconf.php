@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3') || die('Access denied.');
 
 call_user_func(
     function () {
@@ -22,7 +22,7 @@ call_user_func(
         }
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'Libeo.LboVibeo',
+            'LboVibeo',
             'Vibeomedialist',
             [
                 \Libeo\Vibeo\Controller\MediaController::class => 'list',
@@ -34,7 +34,7 @@ call_user_func(
         );
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'Libeo.LboVibeo',
+            'LboVibeo',
             'Vibeosinglemedia',
             [
                 \Libeo\Vibeo\Controller\MediaController::class => 'single',

@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  
+  Libeo\Vibeo\Controller\MediaController:
+    public: true
+    
+  Libeo\Vibeo\Domain\Repository\MediaRepository:
+    public: true
+    
+  Libeo\Vibeo\Domain\Repository\TranscriptionRepository:
+    public: true
+  
+  Libeo\Vibeo\Controller\TranscriptController:
+    public: true

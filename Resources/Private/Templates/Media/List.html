@@ -23,7 +23,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<f:for each="{medias}" as="media">
 
 			<div class="tx-vibeo-list-media-item">
-				<f:render partial="Media/Properties" arguments="{media:media, settings:settings, extRelativePath:extRelativePath}" />
+				<f:render partial="Media/Properties" arguments="{media:media, settings:settings}" />
 			</div>
 
 		</f:for>
@@ -53,7 +53,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 					</f:if>
 				}
 			}
-			var VibeoPlayerConfig = <f:format.html parseFuncTSPath="">{JSPlayerConfigurationString}</f:format.html>;
+			var VibeoPlayerConfig = <f:format.raw>{JSPlayerConfigurationString}</f:format.raw>;
 		</script>
 
 </f:section>

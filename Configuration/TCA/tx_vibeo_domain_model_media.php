@@ -1,19 +1,19 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
-    die ('Access denied.');
+if (!defined('TYPO3')) {
+    die('Access denied.');
 }
 
 return [
     'ctrl' => [
-        'title'	=> 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xlf:tx_vibeo_domain_model_media',
+        'title' => 'LLL:EXT:lbo_vibeo/Resources/Private/Language/locallang_db.xlf:tx_vibeo_domain_model_media',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'dividers2tabs' => TRUE,
+        'dividers2tabs' => true,
 
         'versioningWS' => 2,
-        'versioning_followPages' => TRUE,
+        'versioning_followPages' => true,
         'origUid' => 't3_origuid',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -25,8 +25,10 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title,subtitle,author,description,path,url,image,track,',
-        'iconfile' => 'EXT:lbo_vibeo/Resources/Public/Icons/vibeo.svg'
-
+        'iconfile' => 'EXT:lbo_vibeo/Resources/Public/Icons/vibeo.svg',
+        'security' => [
+            'ignorePageTypeRestriction' => true
+        ]
     ],
     'types' => [
         '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, subtitle, author, description, path, url, image, track,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime, endtime'],
