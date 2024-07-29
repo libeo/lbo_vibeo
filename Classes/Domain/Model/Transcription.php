@@ -36,98 +36,105 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Transcription extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Transcription extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * Title of this element
-	 *
-	 * @var string
-	 */
-	protected $title;
+    /**
+     * Title of this element
+     *
+     * @var string
+     */
+    protected $title;
 
-	/**
-	 * Text description for this element
-	 *
-	 * @var string
-	 */
-	protected $description;
+    /**
+     * Text description for this element
+     *
+     * @var string
+     */
+    protected $description;
 
-	/**
-	 * Metadata title
-	 *
-	 * @var string
-	 */
-	protected $metadataTitle;
+    /**
+     * Metadata title
+     *
+     * @var string
+     */
+    protected $metadataTitle;
 
-	/**
-	 * Returns the title
-	 *
-	 * @return string $title
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
+    /**
+     * Returns the title
+     *
+     * @return string $title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-	/**
-	 * Sets the title
-	 *
-	 * @param string $title
-	 * @return void
-	 */
-	public function setTitle($title) {
-		$this->title = $title;
-	}
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     * @return void
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
-	/**
-	 * Returns the description
-	 *
-	 * @return string $description
-	 */
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * Returns the description
+     *
+     * @return string $description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 
-	/**
-	 * Sets the description
-	 *
-	 * @param string $description
-	 * @return void
-	 */
-	public function setDescription($description) {
-		$this->description = $description;
-	}
+    /**
+     * Sets the description
+     *
+     * @param string $description
+     * @return void
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
 
-	/**
-	 * Returns the metadataTitle
-	 *
-	 * @return string $metadataTitle
-	 */
-	public function getMetadataTitle() {
-		return $this->metadataTitle;
-	}
+    /**
+     * Returns the metadataTitle
+     *
+     * @return string $metadataTitle
+     */
+    public function getMetadataTitle()
+    {
+        return $this->metadataTitle;
+    }
 
-	/**
-	 * Sets the metadataTitle
-	 *
-	 * @param string $metadataTitle
-	 * @return void
-	 */
-	public function setMetadataTitle($metadataTitle) {
-		$this->metadataTitle = $metadataTitle;
-	}
+    /**
+     * Sets the metadataTitle
+     *
+     * @param string $metadataTitle
+     * @return void
+     */
+    public function setMetadataTitle($metadataTitle)
+    {
+        $this->metadataTitle = $metadataTitle;
+    }
 
-	/**
-	 * Returns the differentLanguage
-	 *
-	 * @return string
-	 */
-	public function getIsDifferentTagLanguageOfPage() {
+    /**
+     * Returns the differentLanguage
+     *
+     * @return string
+     */
+    public function getIsDifferentTagLanguageOfPage()
+    {
         $languageAspect = GeneralUtility::makeInstance(Context::class)->getAspect('language');
-		if($languageAspect->getId() != $this->_languageUid) {
-			return $this->_languageUid;
-		} else {
-			return false;
-		}
-	}
-
+        if ($languageAspect->getId() != $this->_languageUid) {
+            return $this->_languageUid;
+        } else {
+            return false;
+        }
+    }
 }

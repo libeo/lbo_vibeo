@@ -35,12 +35,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class TranscriptionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class TranscriptionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	public function initializeObject() {
+    public function initializeObject()
+    {
         $querySettings = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings::class);
-        $querySettings->setRespectStoragePage(FALSE);
+        $querySettings->setRespectStoragePage(false);
         $this->setDefaultQuerySettings($querySettings);
     }
-
 }

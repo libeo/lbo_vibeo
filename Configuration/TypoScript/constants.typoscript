@@ -141,5 +141,9 @@ plugin.tx_lbovibeo {
 			# Display thumbnails in the list of videos and resize them automatically on click.
 			startWithThumbnails = 1
 		}
+
+        # Page to be used as target for TranscriptController::showAction()
+        transcriptionPage =
+        vibeoAssetsPath = EXT:lbo_vibeo/Resources/Public
 	}
 }

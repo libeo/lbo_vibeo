@@ -145,6 +145,9 @@ plugin.tx_lbovibeo {
 			# Display thumbnails in the list of videos and resize them automatically on click.
 			startWithThumbnails = {$plugin.tx_lbovibeo.settings.list.startWithThumbnails}
 		}
+
+        transcriptionPage = {$plugin.tx_lbovibeo.settings.transcriptionPage}
+        vibeoAssetsPath = {$plugin.tx_lbovibeo.settings.vibeoAssetsPath}
 	}
 
 }

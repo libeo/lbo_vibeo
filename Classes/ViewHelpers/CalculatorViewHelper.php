@@ -11,7 +11,8 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  * @subpackage Fluid
  * @version
  */
-class CalculatorViewHelper extends AbstractViewHelper {
+class CalculatorViewHelper extends AbstractViewHelper
+{
 
     /**
      * Renders some classic dummy content: Lorem Ipsum...
@@ -21,10 +22,9 @@ class CalculatorViewHelper extends AbstractViewHelper {
      * @return Result
      * @author Philippe Moreau
      */
-    public function render($equation) {
+    public function render($equation)
+    {
         eval('$result = '.$equation.';');
         return $result;
     }
 }
-
-?>

@@ -4,6 +4,7 @@ namespace Libeo\Vibeo\Controller;
 
 use Libeo\Vibeo\Domain\Model\Transcription;
 use Libeo\Vibeo\Domain\Repository\TranscriptionRepository;
+use Psr\Http\Message\ResponseInterface;
 
 /***************************************************************
  *  Copyright notice
@@ -39,48 +40,51 @@ use Libeo\Vibeo\Domain\Repository\TranscriptionRepository;
 class TranscriptController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
-	protected $extKey = 'lbo_vibeo';
+    protected $extKey = 'lbo_vibeo';
 
-	/**
-	 * transcriptionRepository
-	 *
-	 * @var TranscriptionRepository
-	 */
-	protected $transcriptionRepository;
+    /**
+     * transcriptionRepository
+     *
+     * @var TranscriptionRepository
+     */
+    protected $transcriptionRepository;
 
-	/**
-	 * injectTranscriptionRepository
-	 *
-	 * @param TranscriptionRepository $transcriptionRepository
-	 * @return void
-	 */
-	public function injectTranscriptionRepository(TranscriptionRepository $transcriptionRepository) {
-		$this->transcriptionRepository = $transcriptionRepository;
-	}
+    /**
+     * injectTranscriptionRepository
+     *
+     * @param TranscriptionRepository $transcriptionRepository
+     * @return void
+     */
+    public function injectTranscriptionRepository(TranscriptionRepository $transcriptionRepository): void
+    {
+        $this->transcriptionRepository = $transcriptionRepository;
+    }
 
-	/**
-	 * action show
-	 *
-	 * @param Transcription $transcription
-	 * @param int $backPid
-	 * @return void
-	 */
-	public function showAction(Transcription $transcription = null, $backPid = 0) {
+    /**
+     * action show
+     *
+     * @param Transcription $transcription
+     * @param int $backPid
+     * @return ResponseInterface
+     */
+    public function showAction(Transcription $transcription = null, $backPid = 0): ResponseInterface
+    {
         if (!$transcription) {
             return 'Aucune transcription à afficher.';
         }
 
-		$register['transcriptTitle'] = $transcription->getMetadataTitle();
-        $this->configurationManager->getContentObject()->cObjGetSingle('LOAD_REGISTER', $register);
+        $register['transcriptTitle'] = $transcription->getMetadataTitle();
+        $this->request->getAttribute('currentContentObject')->cObjGetSingle('LOAD_REGISTER', $register);
 
-		$langTag = '';
-		if($transcription->getIsDifferentTagLanguageOfPage() !== false) {
-			$langTag = ' lang="' . $this->settings['languageTag'][$transcription->getIsDifferentTagLanguageOfPage()] . '"';
-		}
+        $langTag = '';
+        if ($transcription->getIsDifferentTagLanguageOfPage() !== false) {
+            $langTag = ' lang="' . $this->settings['languageTag'][$transcription->getIsDifferentTagLanguageOfPage()] . '"';
+        }
 
-		$this->view->assign('transcription', $transcription);
-		$this->view->assign('langTag', $langTag);
-		$this->view->assign('backPid', $backPid);
-	}
+        $this->view->assign('transcription', $transcription);
+        $this->view->assign('langTag', $langTag);
+        $this->view->assign('backPid', $backPid);
 
+        return $this->htmlResponse();
+    }
 }

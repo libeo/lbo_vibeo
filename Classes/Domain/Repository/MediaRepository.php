@@ -35,28 +35,32 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class MediaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class MediaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
 
-	public function initializeObject() {
-	    $querySettings = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings::class);
-        $querySettings->setRespectStoragePage(FALSE);
+    public function initializeObject()
+    {
+        $querySettings = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings::class);
+        $querySettings->setRespectStoragePage(false);
         $this->setDefaultQuerySettings($querySettings);
     }
 
 
-	public function findByUidOrPid($uid = null, $pid = null) {
-		$query = $this->createQuery();
-		$conditions = array();
+    public function findByUidOrPid($uid = null, $pid = null)
+    {
+        $query = $this->createQuery();
+        $conditions = array();
 
-		if(is_null($uid) && is_null($pid))
-			return null;
+        if (is_null($uid) && is_null($pid)) {
+            return null;
+        }
 
-		$conditions[] = $query->in('uid', is_array($uid) ? $uid : array((int) $uid));
-		$conditions[] = $query->in('pid', is_array($pid) ? $pid : array((int) $pid));
+        $conditions[] = $query->in('uid', is_array($uid) ? $uid : array((int) $uid));
+        $conditions[] = $query->in('pid', is_array($pid) ? $pid : array((int) $pid));
 
-		$query->matching($query->logicalOr($conditions));
+        $query->matching($query->logicalOr(...$conditions));
 
-		return $query->execute();
-	}
+        return $query->execute();
+    }
 }
