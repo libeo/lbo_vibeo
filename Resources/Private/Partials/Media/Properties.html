@@ -65,7 +65,6 @@
 </div>
 
 <f:if condition="{transcription}">
-    <f:debug>{settings}</f:debug>
     <f:link.action pageUid="{settings.transcriptionPage}" action="show" controller="Transcript" arguments="{transcription: transcription, backPid: pageUid}"><f:translate key="player.transcription" /></f:link.action>
 </f:if>
 
