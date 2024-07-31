@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'This extension integrates the Vibeo project, an accessible media player based on MediaElement.js that is meant to respect the SGQRI standards of the provincial government of Quebec. It supports all major video and audio formats, preview images, track files, and is able to fetch video files from Youtube and Vimeo. Vibeo is developed and maintained by LibÃÂ©o, this TYPO3 extension was built by Qc media.
 The documentation will be maintained on the tracker, at http://forge.typo3.org/projects/extension-vibeo',
     'category' => 'plugin',
-    'version' => '12.0.3',
+    'version' => '12.0.4',
     'state' => 'stable',
     'uploadfolder' => false,
     'createDirs' => '',
