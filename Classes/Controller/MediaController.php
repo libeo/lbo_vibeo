@@ -264,7 +264,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             foreach ($stdWrapProperties as $key) {
                 if (is_array($typoScriptArray[$key . '.'])) {
                     $this->settings['media'][$key] = $this->request->getAttribute('currentContentObject')->stdWrap(
-                        $typoScriptArray[$key],
+                        $typoScriptArray[$key] ?? '',
                         $typoScriptArray[$key . '.']
                     );
                 }
@@ -294,8 +294,8 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('youtubeEmbed', $this->getYoutubeEmbedUrl($media->getUrl()));
         $this->view->assign('contentObject', $this->request->getAttribute('currentContentObject')->data);
         $this->view->assign('extRelativePath', PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)));
-        $this->view->assign('transcription', $this->settings['media']['transcription']);
-        $this->view->assign('downloadable', $this->settings['player']['downloadable']);
+        $this->view->assign('transcription', $this->settings['media']['transcription'] ?? '');
+        $this->view->assign('downloadable', $this->settings['player']['downloadable'] ?? '');
         $this->view->assign('pageUid', $this->request->getAttribute('routing')->getPageId());
 
         $arrayFallback = array();
@@ -367,6 +367,9 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     protected function getUniqId()
     {
         $this->contentObj = $this->request->getAttribute('currentContentObject');
-        return $this->contentObj->data['uid'] ?: GeneralUtility::md5int($this->contentObj->data[0] ?: 0);
+        if (($cObjUid = $this->contentObj->data['uid'] ?? false) && $this->contentObj->data['uid'] === 0) {
+            return $cObjUid;
+        }
+        return GeneralUtility::md5int($this->contentObj->data[0] ?? '0');
     }
 }
