@@ -366,10 +366,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     protected function getUniqId()
     {
-        $this->contentObj = $this->request->getAttribute('currentContentObject');
-        if (($cObjUid = $this->contentObj->data['uid'] ?? false) && $this->contentObj->data['uid'] === 0) {
-            return $cObjUid;
-        }
-        return GeneralUtility::md5int($this->contentObj->data[0] ?? '0');
+        $cObj = $this->request->getAttribute('currentContentObject');
+        return $cObj->data['uid'] ? $cObj->data['uid'] : GeneralUtility::md5int($cObj->data[0] ?? '0');
     }
 }
