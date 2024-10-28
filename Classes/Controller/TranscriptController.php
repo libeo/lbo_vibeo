@@ -70,7 +70,7 @@ class TranscriptController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     public function showAction(Transcription $transcription = null, $backPid = 0): ResponseInterface
     {
         if (!$transcription) {
-            return 'Aucune transcription à afficher.';
+            return $this->htmlResponse('Aucune transcription à afficher.');
         }
 
         $register['transcriptTitle'] = $transcription->getMetadataTitle();
