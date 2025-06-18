@@ -5,7 +5,7 @@
 .tx-vibeo .tx-vibeo-single-media-item {margin:2em 0; clear:both;}
 
 .tx-vibeo  .tx-vibeo-list-media-item  .tx-vibeo-player-wrapper {float:left; padding:0 20px 0 0;}
-.tx-vibeo  .tx-vibeo-single-media-item  .tx-vibeo-player-wrapper {margin:0 20px 20x 0;}
+.tx-vibeo  .tx-vibeo-single-media-item  .tx-vibeo-player-wrapper {margin:0 20px 20px 0;}
 
 .tx-vibeo  .tx-vibeo-player {} /* video element before initialization */
 .tx-vibeo  .mejs-video .tx-vibeo-player  {} /* video element after initialization */

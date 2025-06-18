@@ -5,7 +5,6 @@ namespace Libeo\Vibeo\DataProcessing;
 
 use Libeo\Vibeo\Domain\Repository\MediaRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -27,6 +26,8 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class VibeoProcessor implements DataProcessorInterface
 {
+    protected MediaRepository $mediaRepository;
+
     /**
      * Constructor
      */
