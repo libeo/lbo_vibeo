@@ -4,9 +4,6 @@ defined('TYPO3') || die('Access denied.');
 
 call_user_func(
     function () {
-
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lbo_vibeo/Configuration/TsConfig/ContentElementWizard.tsconfig">');
-
         $icons = [
             'vibeo-plugin-icon' => 'vibeo.svg',
         ];
@@ -30,7 +27,8 @@ call_user_func(
             // non-cacheable actions
             [
                 \Libeo\Vibeo\Controller\MediaController::class => '',
-            ]
+            ],
+            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_PLUGIN
         );
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -44,7 +42,8 @@ call_user_func(
             [
                 \Libeo\Vibeo\Controller\MediaController::class => '',
                 \Libeo\Vibeo\Controller\TranscriptController::class => '',
-            ]
+            ],
+            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_PLUGIN
         );
     }
 );

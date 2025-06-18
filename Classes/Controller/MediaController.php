@@ -10,6 +10,7 @@ use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
+use TYPO3\CMS\Extbase\Configuration\Exception;
 
 /***************************************************************
  *  Copyright notice
@@ -99,11 +100,11 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      *
      * @return void
      */
-    public function initializeAction()
+    public function initializeAction(): void
     {
         //Validation. Quick & dirty message but should never appear in production.
         if (!isset($this->settings['includes'])) {
-            return 'Typoscript setup file not included for tx_vibeo. Please include it somewhere.';
+            throw new Exception('Typoscript setup file not included for tx_vibeo. Please include it somewhere.');
         }
 
         // Width / height fix
@@ -257,7 +258,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         }
 
         if ($this->settings['media']['typoscript'] ?? false) {
-            /** @var \TYPO3\CMS\Extbase\Service\TypoScriptService $typoScriptService */
+            /** @var TypoScriptService $typoScriptService */
             $typoScriptService = GeneralUtility::makeInstance(TypoScriptService::class);
             $typoScriptArray = $typoScriptService->convertPlainArrayToTypoScriptArray($this->settings['media']['typoscript']);
             $stdWrapProperties = GeneralUtility::trimExplode(',', $this->settings['media']['typoscript']['useStdWrap'], true);
@@ -293,7 +294,6 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('media', $media);
         $this->view->assign('youtubeEmbed', $this->getYoutubeEmbedUrl($media->getUrl()));
         $this->view->assign('contentObject', $this->request->getAttribute('currentContentObject')->data);
-        $this->view->assign('extRelativePath', PathUtility::stripPathSitePrefix(ExtensionManagementUtility::extPath($this->extKey)));
         $this->view->assign('transcription', $this->settings['media']['transcription'] ?? '');
         $this->view->assign('downloadable', $this->settings['player']['downloadable'] ?? '');
         $this->view->assign('pageUid', $this->request->getAttribute('routing')->getPageId());

@@ -1,158 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<xliff version="1.2">
 	<file source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2023-01-05T21:14:49Z" product-name="lbo_vibeo">
 		<header/>
 		<body>
 			<trans-unit id="vibeomedialist.media" resname="vibeomedialist.media"  approved="yes">
-				<source>Media files</source>
 				<target>Médias</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.playerappearance" resname="vibeomedialist.playerappearance"  approved="yes">
-				<source>Player appearance</source>
 				<target>Apparence du lecteur</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.playerbehaviour" resname="vibeomedialist.playerbehaviour"  approved="yes">
-				<source>Player behaviour</source>
 				<target>Comportement du lecteur</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.listing" resname="vibeomedialist.listing"  approved="yes">
-				<source>Listing options</source>
 				<target>Options de la liste</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.records.pages" resname="vibeomedialist.records.pages"  approved="yes">
-				<source>Pages containing the media records to display</source>
 				<target>Pages contenant les enregistrement médias à afficher</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.records.media" resname="vibeomedialist.records.media"  approved="yes">
-				<source>Specific media records to display</source>
 				<target>Enregistrements spécifiques à afficher</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.videoWidth" resname="vibeomedialist.player.videoWidth"  approved="yes">
-				<source>Player width for videos</source>
 				<target>Largeur du lecteur vidéo</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.videoHeight" resname="vibeomedialist.player.videoHeight"  approved="yes">
-				<source>Player height for videos</source>
 				<target>Hauteur du lecteur vidéo</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.audioWidth" resname="vibeomedialist.player.audioWidth"  approved="yes">
-				<source>Player width for audio</source>
 				<target>Largeur du lecteur audio</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.audioHeight" resname="vibeomedialist.player.audioHeight"  approved="yes">
-				<source>Player height for audio</source>
 				<target>Hauteur du lecteur audio</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.enableAutosize" resname="vibeomedialist.player.enableAutosize"  approved="yes">
-				<source>Enable Flash and Silverlight to resize to content size</source>
 				<target>Activer le lecteur Flash et Silverlight pour redimensionner le contenu automatiquement.</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.alwaysShowControls" resname="vibeomedialist.player.alwaysShowControls"  approved="yes">
-				<source>Hide controls when playing and mouse is not over the video</source>
 				<target>Cacher les contrôles lors de la lecture et que la souris n&#039;est pas placée sur le vidéo.</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.overlayControls" resname="vibeomedialist.player.overlayControls"  approved="yes">
-				<source>Display controls over the video</source>
 				<target>Afficher les contrôles par-dessus le vidéo</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.showCaptionPopup" resname="vibeomedialist.player.showCaptionPopup"  approved="yes">
-				<source>Show caption popup</source>
 				<target>Afficher la fenêtre de sous-titre</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.videoVolume" resname="vibeomedialist.player.videoVolume"  approved="yes">
-				<source>Volume trackbar orientation (horizontal or vertical)</source>
 				<target>Orientation de la barre de volume (horizontal ou vertical)</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.videoVolume.horizontal" resname="vibeomedialist.player.videoVolume.horizontal"  approved="yes">
-				<source>Horizontal</source>
 				<target>Horizontal</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.videoVolume.vertical" resname="vibeomedialist.player.videoVolume.vertical"  approved="yes">
-				<source>Vertical</source>
 				<target>Vertical</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.features" resname="vibeomedialist.player.features"  approved="yes">
-				<source>The order of controls you want on the control bar (ex.: [&#039;playpause&#039;,&#039;progress&#039;,&#039;current&#039;,&#039;duration&#039;,&#039;tracks&#039;,&#039;volume&#039;,&#039;fullscreen&#039;])</source>
 				<target>Ordre des contrôles à afficher dans la barre de contrôles (ex.: [&#039;playpause&#039;,&#039;progress&#039;,&#039;current&#039;,&#039;duration&#039;,&#039;tracks&#039;,&#039;volume&#039;,&#039;fullscreen&#039;])</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.alwaysShowHours" resname="vibeomedialist.player.alwaysShowHours"  approved="yes">
-				<source>Forces the the display of the hour marker (## =00 =00)</source>
 				<target>Toujours afficher les heures (## =00 =00)</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.showTimecodeFrameCount" resname="vibeomedialist.player.showTimecodeFrameCount"  approved="yes">
-				<source>Show framecount in timecode (## =00 =00 =00)</source>
 				<target>Afficher le compteur d&#039;images dans le compteur de temps (## =00 =00 =00)</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.framesPerSecond" resname="vibeomedialist.player.framesPerSecond"  approved="yes">
-				<source>Frames per second. Used when showTimecodeFrameCount is enabled</source>
 				<target>Nombre d&#039;images par secondes. À utiliser quand showTimecodeFrameCount est activé</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.startVolume" resname="vibeomedialist.player.startVolume"  approved="yes">
-				<source>Default volume at startup (0-100)</source>
 				<target>Volume par défaut au début (0-100)</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.loop" resname="vibeomedialist.player.loop"  approved="yes">
-				<source>Make the player automatically restart</source>
 				<target>Rejouer automatiquement</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.iPadUseNativeControls" resname="vibeomedialist.player.iPadUseNativeControls"  approved="yes">
-				<source>Force iPad&#039;s native controls</source>
 				<target>Utiliser les contrôles natifs du iPad</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.iPhoneUseNativeControls" resname="vibeomedialist.player.iPhoneUseNativeControls"  approved="yes">
-				<source>Force iPhone&#039;s native controls</source>
 				<target>Utiliser les contrôles natifs du iPod</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.AndroidUseNativeControls" resname="vibeomedialist.player.AndroidUseNativeControls"  approved="yes">
-				<source>Force Android&#039;s native controls</source>
 				<target>Utiliser les contrôles natifs d&#039;Android</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.enableKeyboard" resname="vibeomedialist.player.enableKeyboard"  approved="yes">
-				<source>Enable keyboard control support</source>
 				<target>Activer le support du contrôle par le clavier</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.pauseOtherPlayers" resname="vibeomedialist.player.pauseOtherPlayers"  approved="yes">
-				<source>Enable pausing of other players on the page when this player starts</source>
 				<target>Activer l&#039;arrêt des autres lecteur de la page lorsque ce lecteur est activé</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.keyActions" resname="vibeomedialist.player.keyActions"  approved="yes">
-				<source>Array of keyboard commands</source>
 				<target>Liste des commandes de clavier</target>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.hideContextualMenu" resname="vibeomedialist.player.hideContextualMenu"  approved="yes">
-				<source>Hide contextual menu</source>
 				<target/>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.player.downloadable" resname="vibeomedialist.player.downloadable"  approved="yes">
-				<source>Enable download</source>
 				<target/>
 			</trans-unit>
 			<trans-unit id="vibeomedialist.list.startWithThumbnails" resname="vibeomedialist.list.startWithThumbnails"  approved="yes">
-				<source>Display thumbnails in the list of videos and resize them automatically on click</source>
 				<target>Afficher les lecteurs en miniatures lors de l&#039;affichage de la page et les redimensionner automatique lors de la lecture</target>
 			</trans-unit>
 			<trans-unit id="vibeosinglemedia.files" resname="vibeosinglemedia.files"  approved="yes">
-				<source>Files used for this element. Video and audio elements can have multiple files that will automatically rollback depending on the browser&#039;s supported formats. </source>
 				<target>Fichiers vidéos ou audio utilisés. Les éléments audio ou vidéo peuvent avoir plusieurs fichiers qui s&#039;interchangeront en fonction des formats supportés par le navigateur.</target>
 			</trans-unit>
 			<trans-unit id="vibeosinglemedia.url" resname="vibeosinglemedia.url"  approved="yes">
-				<source>Or, use a link to a video on Youtube, Amazon S3 or Vimeo. It will be played using the Vibeo player.</source>
 				<target>Ou, entrez le lien (URL) du vidéo sur Youtube ou Vimeo. Il sera joué avec le lecteur Vibéo.</target>
 			</trans-unit>
 			<trans-unit id="vibeosinglemedia.description" resname="vibeosinglemedia.description"  approved="yes">
-				<source>Text description</source>
 				<target>Description textuelle</target>
 			</trans-unit>
 			<trans-unit id="vibeosinglemedia.image" resname="vibeosinglemedia.image"  approved="yes">
-				<source>Preview image (optional). Also used as replacement image if the video or audio file cannot be played</source>
 				<target>Image de prévisualisation (optionnelle), aussi utilisée comme remplacement si les fichiers audio ou vidéos ne peuvent pas être lus.</target>
 			</trans-unit>
 			<trans-unit id="vibeosinglemedia.track" resname="vibeosinglemedia.track"  approved="yes">
-				<source>Track files used for subtitles during video playback.</source>
 				<target>Fichiers sous-titres utilisés durant la lecture du vidéo.</target>
 			</trans-unit>
 			<trans-unit id="vibeosinglemedia.transcription" resname="vibeosinglemedia.transcription"  approved="yes">
-				<source>Text transcription</source>
 				<target>Transcription textuelle</target>
 			</trans-unit>
 		</body>
