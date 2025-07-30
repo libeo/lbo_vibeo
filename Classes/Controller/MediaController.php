@@ -250,7 +250,7 @@ class MediaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function singleAction(): ResponseInterface
     {
-        $media = new Media();
+        $media = GeneralUtility::makeInstance(Media::class);
 
         if ($this->settings['media']['uid'] ?? false) {
             /** @var Media $media */

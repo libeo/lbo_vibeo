@@ -363,15 +363,17 @@ class Media extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
             if (strpos($url, 'youtube.com') !== false || strpos($url, 'youtu.be') !== false) {
                 $this->setFileType('video/youtube');
                 $this->setMediaType('video');
-            }
-            if (strpos($url, 'vimeo.com') !== false) {
+            } elseif (strpos($url, 'vimeo.com') !== false) {
                 $this->setFileType('video/vimeo');
                 $this->setMediaType('video');
-            }
-            if (strpos($url, 'amazonaws.com') !== false) {
+            } elseif (strpos($url, 'amazonaws.com') !== false) {
                 $this->setFileType('video/amazons3');
                 $this->setMediaType('video');
 
+                $mime = $this->getMimeTypeFromUrl($url);
+                $this->setFileType($mime);
+                $this->setMediaType(substr($mime, 0, strpos($mime, '/')));
+            } else {
                 $mime = $this->getMimeTypeFromUrl($url);
                 $this->setFileType($mime);
                 $this->setMediaType(substr($mime, 0, strpos($mime, '/')));
